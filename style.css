@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
+
+body {
+    background-color: #000000dd;
+}
+
+#title {
+    font-family: 'Anton', sans-serif;
+}
+
+.about {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    padding-bottom: 12px;
+    color: rgb(250, 111, 57);
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+}
+
+.about:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(250, 111, 57);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+.about:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+.luminate{
+    position: relative;
+    display: inline-block;
+    margin: 40px 0;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    margin-right: 50px;
+}
+
+.luminate-logo{
+    filter: hue-rotate(160deg);
+    text-decoration: none;
+}
+
+
+.luminate:hover{
+    background: #03e9f4;
+    color: #050801;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 200px #03e9f4;
+     -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+    font-weight: bold;
+    animation: ease-in-out 2s;
+}
+
+.luminate:nth-child(2){
+    filter: hue-rotate(200deg);
+}
+.luminate span{
+    position: absolute;
+    display: block;
+}
+
+.luminate span:nth-child(1){
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#03e9f4);
+    animation: animate1 1s linear infinite;
+}
+@keyframes animate1{
+    0%{
+        left: -100%;
+    }
+    50%,100%{
+        left: 100%;
+    }
+}
+.luminate span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#03e9f4);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+@keyframes animate2{
+    0%{
+        top: -100%;
+    }
+    50%,100%{
+        top: 100%;
+    }
+}
+.luminate span:nth-child(3){
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#03e9f4);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+@keyframes animate3{
+    0%{
+        right: -100%;
+    }
+    50%,100%{
+        right: 100%;
+    }
+}
+
+
+.luminate a span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#03e9f4);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+@keyframes animate4{
+    0%{
+        bottom: -100%;
+    }
+    50%,100%{
+        bottom: 100%;
+    }
+}
+
+.card-project, #info-hidden{
+    cursor: pointer;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+.card-project:hover {
+    box-shadow: 0 0 5px #79074d,
+    0 0 25px #97045f,
+    0 0 50px #a30968,
+    0 0 200px #2f03f4;;
+    transition: box-shadow 1s ease-in-out;
+}
+
+.content-info div {
+    pointer-events: none;
+    position: absolute;
+    top: 40%;
+    bottom: 40%;
+    color: black;
+    visibility: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+}
+
+.content-info:hover div {
+    visibility: visible;
+}
+
+.card-info:hover {
+    filter: blur(4px);
+    transition: filter 1s;
+}
+
+.btn-contact {
+    border: none;
+    border-radius: 70px; 
+    background-color: "#ffffff";
+}
+
+.btn-contact {
+    font-family: 'Anton', sans-serif;
+}
+
+.btn-contact:hover {
+    background-color: #425e1e;
+    color: white;
+    transition: all 1.7s;
+}
+
+.stand-photo:hover {
+    transform: scale(1.1);
+    box-shadow: -2px 3px 20px 5px rgba(0,0,0,0.1);
+    -webkit-box-shadow: -2px 3px 20px 5px rgba(0,0,0,0.1);
+    -moz-box-shadow: -2px 3px 20px 5px rgba(0,0,0,0.1);
+    transition: all 1.5s;
+}
+
+.stand:hover {
+    transform: scale(1.1);
+    transition: all 1.5s;
+}
+
+#contact div:hover {
+    filter: brightness(95%) hue-rotate(10deg);
+    transition: filter 1.2s;
+}

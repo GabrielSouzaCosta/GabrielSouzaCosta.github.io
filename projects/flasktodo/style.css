@@ -1,0 +1,7 @@
+body {
+  height: 100vh;
+  background: linear-gradient(90deg, hsla(139, 70%, 75%, 1) 0%, hsla(63, 90%, 76%, 1) 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Kdam Thmor Pro', sans-serif;
+}

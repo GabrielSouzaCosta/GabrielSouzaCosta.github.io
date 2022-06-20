@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/projects/projects-style.css">
+    <title>Anime Hunter</title>
+</head>
+<body>
+    <div class="d-flex flex-column position-fixed end-0 top-0 p-2" style="z-index: 1;">
+        <a href="https://github.com/GabrielSouzaCosta/anime_hunter" target="_blank">
+            <img src="/images/github.png" alt="django to-do list repositorio" width="50px" style="opacity: 0.8;">
+        </a>
+        <a href="/">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50px" style="opacity: 0.8;" fill="#ffffff" class="bi bi-house-fill home" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+              </svg>
+        </a> 
+    </div>
+
+    <div class="container-fluid h-100">
+        <video src="assets/video.mp4" loop muted autoplay></video>
+        <h1 class="text-center text-white pt-2 display-4">Anime Hunter</h1>
+            <div class="row m-auto" style="height: 100%;">
+                <a href="javascript:delay('#top')" class="col-10 col-md-4 col-lg-2 m-auto stand" onclick="document.getElementById('discover').style.display = 'none'; document.getElementById('top').style.display = 'block'; document.getElementById('favorites').style.display = 'none' ">
+                    <img src="assets/goku.png" alt="escolher Goku" class="w-100">
+                </a>
+                <a href="javascript:delay('#discover')" class="col-11 col-md-4 col-lg-3 m-auto stand" onclick="document.getElementById('discover').style.display = 'block'; document.getElementById('top').style.display = 'none'; document.getElementById('favorites').style.display = 'none'">
+                    <img src="assets/mikasa.png" alt="escolher Mikasa" class="w-100">
+                </a>
+                <a href="javascript:delay('#favorites')" class="col-11 col-md-4 col-lg-3 m-auto stand pb-4" onclick="document.getElementById('discover').style.display = 'none'; document.getElementById('top').style.display = 'none'; document.getElementById('favorites').style.display = 'block' ">
+                    <img src="assets/naruto.png" alt="escolher Naruto" class="w-100" >
+                </a>
+                
+                <div style="display: none; background-color: #ffffaa; overflow:hidden;height:100%;width:100%;" class="col-12 p-0 m-0" id="top">
+                <iframe src="https://anime-hunter-django.herokuapp.com/top/" style="position: relative; top: -60px;"  frameborder="0" 
+                marginheight="0" 
+                marginwidth="0" 
+                width="100%" 
+                height="100%" 
+                scrolling="yes"></iframe>
+            </div>
+
+            <div style="display: none; background-color: #ffffff66; overflow:hidden;height:100%;width:100%;" class="col-12 p-0 m-0" id="discover">
+                <iframe src="https://anime-hunter-django.herokuapp.com/discover" style="position: relative; top: -60px;" frameborder="0" 
+                marginheight="0" 
+                marginwidth="0" 
+                width="100%" 
+                height="100%" 
+                scrolling="auto"
+                ></iframe>
+            </div>
+
+            <div style="display: none; background-color: transparent; overflow:hidden;height:100%;width:100%;" class="col-12 m-0 p-0 mt-5" id="favorites">
+                <iframe src="https://anime-hunter-django.herokuapp.com/favorites_test/" style="position: relative; top: -60px;"  frameborder="0" 
+                marginheight="0" 
+                marginwidth="0" 
+                width="100%"  
+                height="100%"
+                scrolling="auto"
+                ></iframe>
+            </div>
+        </div>
+    </div>
+
+<script>
+    function delay (URL) {
+        setTimeout( function() { window.location = URL }, 1500 );
+    }
+</script>    
+
+</body>
+</html>
