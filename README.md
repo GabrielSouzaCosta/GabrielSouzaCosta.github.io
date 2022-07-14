@@ -2,7 +2,7 @@
 
 The site contains my contact details and my main projects.
 
-Each project contains a unique, personalized page.
+Each project contains a unique, personalized page.<br><br>
 link: https://gabrielsouzacosta.github.io/
 
 <h2>Homepage</h2>
