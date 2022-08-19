@@ -96,13 +96,26 @@ section.detailsSection {
     margin-top: 0;
     margin-bottom: 2.5rem;
     text-align: start;
-    font-family: $secondary-font;
+    font-family: $general-font;
     padding: 1.4rem;
+}
+
+.carouselLight {
+    .description {
+        color: $light-shade;
+    }
+    background: $dark-shade;
+    background: linear-gradient(160deg, #2c363f 75%, rgba(255, 255, 255, 0.13) 100%);
+    // background: linear-gradient(135deg, rgba(44,54,63, 0.9) 50%, rgba(255,255,255,0.13067233729429273) 100%); 
 }
 
 @media screen and (max-width: 1024px) {
     .container {
         margin: 0.4rem;
+    }
+
+    section.detailsSection {
+        min-height: 0;
     }
 
     .h1 {

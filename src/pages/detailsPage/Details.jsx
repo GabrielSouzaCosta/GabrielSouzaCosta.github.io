@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import styles from './styles.module.scss'
@@ -10,10 +10,12 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 
 import data from './data'
 import { useTranslation } from 'react-i18next'
+import { ThemeContext } from '../../App'
 
 function Details() {
     const { project } = useParams()
     const projectData = data.find(p => p.url === project)
+    const { theme } = useContext(ThemeContext)
 
     const { t } = useTranslation()
 
@@ -35,7 +37,7 @@ function Details() {
                     }
                 </div>
                 <Carousel 
-                className={styles.carousel} 
+                className={`${styles.carousel} ${theme === "light" ? styles.carouselLight: '123'}`} 
                 emulateTouch 
                 infiniteLoop
                 showStatus={false}
