@@ -16,7 +16,7 @@ function Work() {
     <section className={styles.container}>
         <div style={{textAlign: 'center'}}>
             <h1>
-                MY BEST PROJECTS
+                {t("MY BEST PROJECTS")}
             </h1>
         </div>
         <div className={styles.project}>
