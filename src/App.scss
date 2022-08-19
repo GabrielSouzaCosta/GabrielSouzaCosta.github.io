@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Nanum+Myeongjo&family=Raleway:wght@100;200;300;400;500;600;800&display=swap');
+
+$brand-font: 'Aboreto', cursive;
+$secondary-font: 'Nanum Myeongjo', serif;
+$general-font: 'Raleway', sans-serif;
+
+$light-shade: #f2f5ea;
+$light-accent: #ddbb7a;
+$main-brand: #6c936a;
+$dark-accent: #b67f54;
+$dark-shade: #2c363f;
+
+#light {
+  background-color: $light-shade;
+}
+
+#dark {
+  height: 100%;
+  background-color: $dark-shade;
+  color: white;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $general-font;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: $light-shade;
+}
+
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 3rem;
+}
+h3 {
+  font-size: 2.4rem;
+  margin-bottom: 0;
+}
+h4 {
+  font-size: 2.2rem;
+}
+h5 {
+  font-size: 2rem;
+}
+
+.container {
+  max-width: 1024px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 2rem;
+}
+
+.text-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.centered-section {
+  padding: 1rem 0;
+  h2 {
+    text-align: center;
+    font-weight: bold;
+  }
+  p {
+    font-size: 1.8rem;
+    margin: 0 auto;
+  }
+}
+
+
+@media screen and (max-width: 1280px) {
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2.4rem;
+  }
+  h3 {
+    font-size: 2.2rem;
+    margin-bottom: 0;
+  }
+  h4 {
+    font-size: 2rem;
+  }
+  h5 {
+    font-size: 1.7rem;
+  }
+}
+

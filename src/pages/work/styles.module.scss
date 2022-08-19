@@ -1,0 +1,125 @@
+@import '../../App.scss';
+
+.container {
+    min-height: 120vh;
+    max-width: 1300px;
+    h1 {
+        display: inline-block;
+        font-family: $brand-font;
+        &:after {
+            display: block;
+            content: '';
+            width: 97%;
+            margin: 0 auto;
+            padding-top: 0.7rem;
+            border-bottom: 4px solid $light-accent;
+        }
+    }
+    h2 {
+        text-align: center;
+    }
+}
+
+div.project {
+    padding-bottom: 3rem;
+    align-items: center;
+    img.siteImage {
+        cursor: pointer;
+        box-shadow: 0px 0px 30px #ffffff2d;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    div.project {
+        padding-bottom: 3rem;
+        align-items: center;
+        img.siteImage {
+            cursor: pointer;
+            box-shadow: 0px 0px 30px #ffffff2d;
+            width: 100%;
+        }
+        &:nth-child(3) {
+            display: grid;
+            grid-template-columns: 60% 40%;
+            column-gap: 10px;
+        }
+        &:nth-child(4) {
+            display: grid;
+            grid-template-columns: 40% 60%;
+            column-gap: 10px;
+        }
+        &:nth-child(6) {
+            display: grid;
+            grid-template-columns: 60% 40%;
+            column-gap: 10px;
+        }
+    }
+}
+
+
+.boxInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid $light-accent;
+    background-color: $light-shade;
+    color: $dark-shade;
+    padding: 0 0.9em;
+    h2 {
+        font-family: $brand-font;
+        font-weight: bold;
+        margin-top: 0.5rem;
+        margin-bottom: 0.9rem;
+    }
+    div.images {
+        display: flex;
+        justify-content: center;
+        img {
+            height: 80px;
+            margin: 0 0.8rem;
+        }
+    }
+    p {
+        font-size: 1.6rem;
+    }
+}
+
+.detailsButton {
+    margin-left: auto;
+    width: fit-content;
+    font-family: $secondary-font;
+    background-color: $dark-shade;
+    padding: 0.7rem;
+    font-size: 1.5rem;
+    a:hover {
+        color: $light-accent;
+        filter: brightness(120%);
+        transition: all 0.5s ease-in-out;
+    }
+}
+
+
+.links {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-bottom: 0.4rem;
+    bottom: 0;
+    a {
+        margin: 0 0.7rem;
+        &:nth-child(1):hover {
+            transform: scale(105%);
+            transition: transform 0.7s ease-in;
+        }
+        &:nth-child(2) {
+            justify-self: end;
+            color: $dark-shade;
+            padding-left: 0.4rem;
+            &:hover {
+                filter: brightness(150%);
+                transition: filter 1s ease-in;
+            }
+        }
+    }
+  }
