@@ -30,6 +30,7 @@ section.detailsSection {
     border-radius: 4px;
     width: fit-content;
     display: flex;
+    align-items: center;
     justify-content: center;
     margin: 0 auto;
     margin-bottom: 2rem;
@@ -42,7 +43,7 @@ section.detailsSection {
     }
     img {
         cursor: pointer;
-        margin-right: 1rem;
+        padding: 0.3rem;
         height: 90px;
         mix-blend-mode: hard-light;
         &:hover {
@@ -57,7 +58,7 @@ section.detailsSection {
     background: linear-gradient(135deg, rgba(44,54,63, 0.9) 50%, rgba(255,255,255,0.13067233729429273) 100%); 
     box-shadow: 7px 2px 20px 2px $dark-shade;
     margin: 0 auto;
-    max-width: 90%;
+    max-width: 80%;
     img::selection {
         color: none;
         background: none;
@@ -97,4 +98,35 @@ section.detailsSection {
     text-align: start;
     font-family: $secondary-font;
     padding: 1.4rem;
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        margin: 0.4rem;
+    }
+
+    .h1 {
+        font-size: 1.9rem;
+        margin: 0;
+         margin-bottom: 0.6rem;
+        a {
+            padding-top: 0.7rem;
+            display: block;
+        }
+    }
+    .techs {
+        flex-wrap: wrap;
+        padding: 0.8rem;
+        img {
+            height: 50px;
+        }
+    }
+
+    .carousel {max-width: 100%;}
+
+    .description{
+        font-size: 0.94rem;
+        margin: 0;
+        margin-bottom: 0.5rem;
+    }
 }

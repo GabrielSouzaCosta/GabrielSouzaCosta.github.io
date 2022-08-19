@@ -71,12 +71,13 @@ function Work() {
             </div>
         </div>
         <div className={styles.project}>
+            <img src="/images/projects/salveumpet.png" alt="breathe shoes website" className={styles.siteImage}/>
             <div className={styles.boxInfo}>
                 <h2>
                     Salve um Pet
                 </h2>
                 <div className={styles.images}>
-                    <img src="/icons/flask.png" alt="flask icon" style={{filter: 'invert(1)', height: '100px'}} />
+                    <img src="/icons/flask.png" alt="flask icon" style={{filter: 'invert(1)'}} />
                     <img src="/icons/react.svg" alt="react icon" />
                 </div>
                 <p>

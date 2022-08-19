@@ -1,8 +1,7 @@
 <h1>Personal Portfolio Website</h2>
 
-The site contains my contact details and my main projects.
+The site contains my contact details and my main projects. It has dark mode and is in Portuguese and English.
 
-Each project contains a unique, personalized page.<br><br>
 link: https://gabrielsouzacosta.github.io/
 
 <h2>Homepage</h2>

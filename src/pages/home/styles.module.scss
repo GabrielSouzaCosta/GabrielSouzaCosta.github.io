@@ -1,7 +1,11 @@
 @import '../../App.scss';
 
+.profilePhoto {
+    display: none;
+}
+
 .content {
-    height: 60vh;
+    min-height: 60vh;
     display: flex;
     justify-content: center;
     h1 {
@@ -10,8 +14,8 @@
 
     .bgHero {
         width: 100%;
-        background: url('/images/bg-hero.svg') no-repeat 100% 50%;
-        background-size: contain;
+        background: url('/images/bg-hero.svg') no-repeat center right;
+        background-size: 50%;
         mix-blend-mode: multiply;
     }
 
@@ -33,6 +37,26 @@
             transition: all 0.5s ease-in;
         }
     }
+}
+
+.textSection {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+.centeredSection {
+padding: 1rem 0;
+h2 {
+    text-align: center;
+    font-weight: bold;
+}
+p {
+    font-size: 1.8rem;
+    margin: 0 auto;
+}
 }
 
 .projectsSection {
@@ -173,4 +197,94 @@
         height: 100%;
         width: 100%;
     }
+}
+
+
+@media screen and (max-width: 1080px) {
+    .profilePhoto {
+        margin: 0 auto;
+        margin-top: 1rem;
+        display: block;
+        height: 200px;
+        width: 200px;
+        background: rgb(221,187,122);
+        border-radius: 50%;
+        background: linear-gradient(100deg, rgba(221,187,122,0.320168751094187) 0%, rgba(108,147,106,0.2) 100%);
+        img {
+            width: 100%;
+        }
+    }
+
+    .textSection {
+        padding: 0 1rem;
+        width: 85%;
+        margin: 0 auto;
+        text-align: center;
+        h1 {
+            font-size: 2rem
+        }
+        button {
+            font-size: 1.4rem;
+            width: fit-content;
+            height: fit-content;
+            padding: 1rem;
+        }
+    }
+
+    .content {
+        .bgHero {
+            height: 100%;
+            background-image: none;
+        }
+    }
+
+    .centeredSection {
+        margin-top: 1.5rem;
+        h2 {
+            margin: 0;
+            margin-bottom: 1rem;
+        }
+        padding: 0 1.2rem;
+        .aboutButton {
+            font-size: 1.4rem;
+            margin-top: 1rem;
+        }
+    }
+
+    .projectsSection {
+        padding: 0 1rem; 
+        h2 {
+            font-size: 2rem;
+        }
+        .project {
+            padding-bottom: 0;
+            .title, .link, .detailsButton, p {
+                margin: 0.5rem 0.7rem;
+            }
+            p {
+            font-size: 1.3rem;
+            }
+            .link {
+                font-size: 1rem;
+                a {
+                    word-break: break-all;
+                }
+            }
+            .detailsButton {
+                border: none;
+                color: $light-shade;
+                background-color: $dark-shade;
+                padding: 0.5rem;
+                font-family: $general-font;
+                font-size: 1.4rem;
+                font-weight: bold;
+                &:active {
+                    color: $light-accent;
+                    transition: all 0.4s ease-in;
+                }
+            }
+        }
+    }
+
+
 }

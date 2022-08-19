@@ -25,11 +25,6 @@ function Footer() {
                         {t("Work")}
                     </Link>
                 </li>
-                <li>
-                    <Link to="/blog">
-                        Blog
-                    </Link>
-                </li>
             </ul>
             <div className={styles.links}>
                 <a href="https://drive.google.com/file/d/1BBSPZt-ol1BCoOMqjcjo-uW1Rmb2YPr2/view?usp=sharing" target='_blank'>

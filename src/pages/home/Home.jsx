@@ -17,22 +17,25 @@ function Home() {
         <Navbar />
         <Social />
         <div className='container'>
-
           <header style={{minHeight: '95vh'}}>
             <section className={styles.content}>
-              <div className='text-section'>
-                <h1>
-                  {t("Hi, My name is Gabriel and I'm a Full Stack Developer.")}
-                </h1>
-                <Link to="projects" smooth={true} duration={500}>
-                  <button style={{cursor: 'pointer'}} >
-                    {t("MY WORK")}
-                  </button>
-                </Link>
-              </div>
-              <div className={styles.bgHero} style={theme === 'dark' ? {mixBlendMode: 'hard-light'}: {}}></div>
+                <div className={styles.bgHero} style={theme === 'dark' ? {mixBlendMode: 'hard-light'}: {}}>
+                  <div className={styles.textSection}>
+                    <div className={styles.profilePhoto}>
+                      <img src="/images/profile.png" alt="my photo" />
+                      </div>
+                    <h1>
+                      {t("Hi, My name is Gabriel and I'm a Full Stack Developer.")}
+                    </h1>
+                    <Link to="projects" smooth={true} duration={500}>
+                      <button style={{cursor: 'pointer'}} >
+                        {t("MY WORK")}
+                      </button>
+                    </Link>
+                  </div>
+                </div>
             </section>
-            <section className='centered-section'>
+            <section className={styles.centeredSection}>
               <h2>
                 {t("ABOUT ME")}
               </h2>
@@ -62,7 +65,7 @@ function Home() {
                 {t("Breathe Shoes is a fictional E-commerce, it implements payment through Pagseguro and Paypal in Sandbox mode.")}
               </p>
               <div className={styles.link}>
-                Github Repository:  
+                {t("Repository")}:  
                 <a href="https://github.com/GabrielSouzaCosta/shoe-shop" target='_blank'>
                   https://github.com/GabrielSouzaCosta/shoe-shop
                 </a>
@@ -84,7 +87,7 @@ function Home() {
                 {t("It's a fictional bakery shop, the owner for example, can register your products and put it to sale. The payment is done by")} <strong>Stripe</strong>.
               </p>
               <div className={styles.link}>
-                Github Repository:  
+                {t("Repository")}:  
                 <a href="https://github.com/GabrielSouzaCosta/ecommerce-bakery-django-react" target='_blank'>
                 https://github.com/GabrielSouzaCosta/ecommerce-bakery-django-react
                 </a>
@@ -106,7 +109,7 @@ function Home() {
                 {t("Anime Watchlist Manager: it retrieves animes from an unofficial MyAnimeList API and it's possible to favorite and/or add the anime to your watchlist.")} 
               </p>
               <div className={styles.link}>
-                Github Repository:  
+                {t("Repository")}:  
                 <a href="https://github.com/GabrielSouzaCosta/anime_hunter" target='_blank'>
                 https://github.com/GabrielSouzaCosta/anime_hunter
                 </a>
@@ -128,7 +131,7 @@ function Home() {
                 {t("Save a Pet is a website for donating cats and dogs")}
               </p>
               <div className={styles.link}>
-                Github Repository:  
+                {t("Repository")}:  
                 <a href="https://github.com/GabrielSouzaCosta/SalveUmPet-React-Flask" target='_blank'>
                   https://github.com/GabrielSouzaCosta/SalveUmPet-React-Flask
                 </a>
@@ -150,7 +153,7 @@ function Home() {
                 {t("ExcelFiller was created in order to fasten the creation of spreadsheets that need to be filled with many repetitive data.")}
               </p>
               <div className={styles.link}>
-                Github Repository:  
+                {t("Repository")}:  
                 <a href="https://github.com/GabrielSouzaCosta/ExcelFiller" target='_blank'>
                 https://github.com/GabrielSouzaCosta/ExcelFiller
                 </a>

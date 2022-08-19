@@ -17,15 +17,15 @@ function About() {
         <header className={styles.header}>
           <h1>[gabrielscosta ~]$ Whoami</h1>
           <h2>
-            {t("I'm A Self-Taught Full Stack Programmer")}
+            {t("I'm A Self-Taught Programmer")}
           </h2>
-          <h3>
+          <p>
             {t("I started coding about 2 years ago and it was where I found my passion. I started programming in Python and through my path I developed some little applications in areas such as desktop apps, data science and automations. Until I finally began working with Web Development and that's what I decided to specialize in. The Python frameworks I have experience and work today are Django (I use the most) and Flask, and I use React JS for the front end usually.")}
-          </h3>
+          </p>
         </header>
 
         <section className={styles.infoContainer}>
-
+          
           <div className={styles.card}>
             <div className={styles.cardHeader}>
               <img src="/images/profile.png" alt="profile photo" width="200px" height="200px"/>

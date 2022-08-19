@@ -1,6 +1,6 @@
 import './App.scss'
 import './i18n'
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { createContext, useEffect, useState } from 'react'
 import Home from './pages/home/Home'
 import About from './pages/about/About'
@@ -21,7 +21,7 @@ function App() {
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <div id={theme}>
-        <BrowserRouter>
+        <HashRouter>
           <ScrollTop>
             <Routes>
                 <Route path='/' element={ <Home /> }/>
@@ -31,7 +31,7 @@ function App() {
                 <Route path='/:project' element={ <Details /> } />
             </Routes>
           </ScrollTop>
-        </BrowserRouter>
+        </HashRouter>
       </div>
     </ThemeContext.Provider>
   )

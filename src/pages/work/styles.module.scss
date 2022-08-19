@@ -28,9 +28,13 @@ div.project {
         box-shadow: 0px 0px 30px #ffffff2d;
         width: 100%;
     }
+    &:nth-child(4) img.siteImage:nth-child(3) {
+        display: none;
+    }
 }
 
 @media screen and (min-width: 1024px) {
+
     div.project {
         padding-bottom: 3rem;
         align-items: center;
@@ -48,6 +52,12 @@ div.project {
             display: grid;
             grid-template-columns: 40% 60%;
             column-gap: 10px;
+            img.siteImage:nth-child(1) {
+                display: none;
+            }
+            img.siteImage:nth-child(3) {
+                display: block;
+            }
         }
         &:nth-child(6) {
             display: grid;
@@ -62,6 +72,7 @@ div.project {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     border: 3px solid $light-accent;
     background-color: $light-shade;
     color: $dark-shade;
@@ -113,6 +124,7 @@ div.project {
             transition: transform 0.7s ease-in;
         }
         &:nth-child(2) {
+            
             justify-self: end;
             color: $dark-shade;
             padding-left: 0.4rem;
@@ -120,6 +132,38 @@ div.project {
                 filter: brightness(150%);
                 transition: filter 1s ease-in;
             }
+        }
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .container {
+        margin: 0 0.9rem;
+        h1 {
+            font-size: 1.8rem;
+        }
+    }
+
+    .boxInfo {
+        h2 {
+            font-size: 2rem;
+        }
+        div.images {
+            img {
+                height: 50px;
+            }
+        }
+        p {
+            font-size: 1.1rem;
+        }
+    }
+
+    .detailsButton {
+        vertical-align: middle;
+        padding: 0.2rem;
+        padding-bottom: 0.5rem;
+        a {
+            font-size: 1rem;
         }
     }
   }
