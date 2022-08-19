@@ -127,7 +127,7 @@ function Work() {
                     Excel Filler
                 </h2>
                 <div className={styles.images}>
-                    <img src="/icons/flask.png" alt="flask icon" style={{filter: 'invert(1)', height: '100px'}} />
+                    <img src="/icons/flask.png" alt="flask icon" style={{filter: 'invert(1)'}} />
                     <img src="/icons/react.svg" alt="react icon" />
                 </div>
                 <p>
