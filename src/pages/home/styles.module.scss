@@ -271,7 +271,7 @@ p {
                 }
             }
             .detailsButton {
-                border: none;
+                border: 1.5px solid $light-shade;
                 color: $light-shade;
                 background-color: $dark-shade;
                 padding: 0.5rem;
