@@ -21,8 +21,8 @@ function Details() {
 
   return (
     <>
+        <Navbar />
         <section className={styles.detailsSection}>
-            <Navbar />
             <div className={styles.container} style={{ padding: "1.5rem" }}>
                 <h1 className={styles.h1}>
                     {projectData.title} <a href={projectData.repo} target='_blank'><img src="/icons/github.png" alt="github repository" height='50px'/></a>
