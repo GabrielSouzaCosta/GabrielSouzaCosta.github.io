@@ -4,6 +4,5 @@ The site contains my contact details and my main projects. It has dark mode and 
 
 link: https://gabrielsouzacosta.github.io/
 
-<h2>Homepage</h2>
+![Screenshot from 2022-09-12 07-45-46](https://user-images.githubusercontent.com/79537042/189635006-ae4fbcaa-09ae-4af0-9521-9f99d6e3955d.png)
 
-![Screenshot from 2022-06-20 11-01-54](https://user-images.githubusercontent.com/79537042/174618768-1f7849ff-76d6-47ff-8be3-f8e0f7d52c97.png)
