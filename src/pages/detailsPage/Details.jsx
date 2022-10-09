@@ -21,8 +21,9 @@ function Details() {
 
   return (
     <>
+    <div style={{minHeight: "90vh"}}>
         <Navbar />
-        <section className={styles.detailsSection}>
+        <section className={styles.detailsSection} style={{marginBottom: 'auto'}}>
             <div className={styles.container} style={{ padding: "1.5rem" }}>
                 <h1 className={styles.h1}>
                     {projectData.title} <a href={projectData.repo} target='_blank'><img src="/icons/github.png" alt="github repository" height='50px'/></a>
@@ -74,7 +75,8 @@ function Details() {
                 </Carousel>
             </div>
         </section>
-        <Footer />
+    </div>
+    <Footer />
     </>
   )
 }
