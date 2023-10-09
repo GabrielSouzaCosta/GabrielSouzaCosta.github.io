@@ -1,0 +1,50 @@
+---
+import '@fontsource/fjalla-one';
+import '@fontsource/righteous';
+import '../styles/global.css'
+import Navbar from './navbar.astro';
+import Footer from './footer.astro';
+import i18next from 'i18next';
+
+const { content } = Astro.props;
+---
+
+<html 
+	class="scroll-smooth"
+  lang={i18next.language}
+>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{content.title}</title>
+		<script is:inline src="https://unpkg.com/@phosphor-icons/web"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+	</head>
+	<body class="bg-neutral-100 dark:bg-neutral-900 transition-colors duration-700 caret-primary overflow-x-hidden flex flex-col min-h-screen">
+		<Navbar />
+    <div class="flex-1">
+      <slot />
+    </div>
+    <Footer />
+	</body>
+</html>
+
+<script is:inline>
+  const theme = (() => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
+    }
+    return "light";
+  })();
+
+  if (theme === "light") {
+    document.documentElement.classList.remove("dark");
+  } else {
+    document.documentElement.classList.add("dark");
+  }
+  window.localStorage.setItem("theme", theme);
+</script>

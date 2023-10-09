@@ -1,0 +1,963 @@
+---
+import Main from '../layouts/main.astro';
+import i18next from 'i18next';
+
+i18next.changeLanguage('en');
+---
+
+<Main
+	content={{
+		title:"GSC - Web & Mobile Developer"
+	}}
+>
+	<main class="container">
+		<section
+			id="hero"
+			class="h-remaining-screen flex flex-col justify-center w-full scroll-mt-40"
+		>
+			<div class="h-5/6 w-full flex flex-col xl:flex-row justify-start lg:justify-between gap-x-0 xl:gap-x-20 relative">
+				<div>
+					<p class="uppercase text-neutral-700 dark:text-neutral-300 mb-2">
+						Hi, nice to meet you!
+					</p>
+					<div class="border-l-4 pl-4 border-neutral-900 dark:border-neutral-400 mb-8">
+						<h1
+							class="text-3xl lg:text-5xl font-medium mb-2 leading-9 lg:leading-[3.25rem] text-neutral-900 dark:text-neutral-300"
+						>
+							<span>
+								I&apos;m<br>
+							</span>
+							<span class="text-primary">
+								Gabriel 
+							</span>
+							Souza Costa
+						</h1>
+						<h2 class="text-2xl lg:text-4xl text-neutral-900 dark:text-neutral-300">
+							Web & Mobile
+							<br>
+							Developer
+						</h2>
+					</div>
+		
+					<div>
+						<p class="text-neutral-700 dark:text-neutral-300 text-xl mb-4">
+							Translating your dreams into reality, through code
+						</p>
+						<div class="flex gap-x-8 text-xl">
+							<a 
+								href="#contact"
+								class="text-neutral-950 font-medium dark:text-neutral-100"
+							>
+								Contact me
+							</a>
+							<a 
+								href="#projects"
+								class="text-neutral-950 font-medium dark:text-neutral-100"
+							>
+								Look my Projects
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="mt-12 lg:mt-32">
+					<img src="/images/planet.png" alt="">
+				</div>
+
+				<div class="absolute top-0 right-0 w-40 h-40 border-t-4 border-r-4 border-neutral-900 dark:border-neutral-400"></div>
+				<div class="absolute bottom-0 right-0 w-12 h-12 border-r-4 border-b-4 border-neutral-900 dark:border-neutral-400"></div>
+				<div class="absolute bottom-0 left-0 w-40 h-40 border-l-4 border-b-4 border-neutral-900 dark:border-neutral-400 flex items-end p-2">
+					<div>
+						<p class="mb-2 text-sm lg:text-lg flex items-center gap-x-1 text-neutral-900 dark:text-neutral-300">
+							Follow me! <i class="ph ph-smiley-wink text-2xl"></i>
+						</p>
+						<div class="flex gap-x-2 text-3xl">
+							<a 
+								href="https://www.linkedin.com/in/gabriel-souza-costa-8443481bb/"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="text-neutral-900 dark:text-neutral-300 transition-all duration-200 hover:text-primary-600 hover:dark:text-primary-400"
+							>
+								<i class="ph ph-linkedin-logo"></i>
+							</a>
+							<a 
+								href="https://github.com/GabrielSouzaCosta"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="text-neutral-900 dark:text-neutral-300 transition-all duration-200 hover:text-primary-600 hover:dark:text-primary-400"
+							>
+								<i class="ph ph-github-logo"></i>
+							</a>
+							<a 
+								href="https://www.instagram.com/webdev_gabriel/"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="text-neutral-900 dark:text-neutral-300 transition-all duration-200 hover:text-primary-600 hover:dark:text-primary-400"
+							>
+								<i class="ph ph-instagram-logo"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			
+			<div class="flex gap-x-2 items-center mt-4 xl:mt-8">
+				<hr class="flex-1 h-1 border-1 border-neutral-700 dark:border-neutral-400">
+				<i class="ph-fill ph-circle text-neutral-700 dark:text-neutral-400"></i>
+				<hr class="flex-1 h-1 border-1 border-neutral-700 dark:border-neutral-400">
+			</div>
+		</section>
+
+		<section 
+			class="pb-4 lg:pb-8 scroll-mt-40"
+			id="about"
+		>
+			<div class="py-8 lg:py-12 flex flex-col lg:flex-row gap-8 lg:gap-16">
+				<div>
+					<h3 class="text-4xl leading-8 mb-8 text-neutral-950 dark:text-neutral-100">
+						About
+						<br>
+						<span class="border-b-4 border-neutral-700 dark:border-neutral-200">
+							me
+						</span>
+					</h3>
+					<p class="text-neutral-700 dark:text-neutral-300 align-middle gap-x-1">
+						Hello there! I'm Gabriel Souza Costa, a passionate <strong class="uppercase text-primary dark:text-primary-400">Front End</strong> Developer with a love for creating appealing, accessible, and user-friendly web applications. My journey into programming began with Python, but I discovered my true passion in web development. I've been immersed in technology since childhood, exploring Flash games and the web, modding games, learning and interacting with different devices and softwares
+					</p>
+
+					<hr class="flex-1 h-1 border-1 border-neutral-700 my-4">
+					<p class="text-2xl text-neutral-700 dark:text-neutral-300 mb-2">
+						Hobbies & Interests
+					</p>
+					<p class="text-neutral-700 dark:text-neutral-300">
+						I like to watch animes, some series and movies, I also like to go to gym where I relax my mind. I&apos;m very interested in learning about <strong class="uppercase text-primary dark:text-primary-400">design</strong> apart from programming.
+					</p>
+					<div class="grid grid-cols-2 gap-y-2 mt-4">
+						<div>
+							<p class="text-neutral-600 dark:text-neutral-400 text-lg">
+								Favorite Anime
+							</p>
+							<p class="text-neutral-800 dark:text-neutral-200">
+								Hunter X Hunter
+							</p>
+						</div>
+						<div>
+							<p class="text-neutral-600 dark:text-neutral-400 text-lg">
+								Favorite Saga
+							</p>
+							<p class="text-neutral-800 dark:text-neutral-200">
+								Star Wars
+							</p>
+						</div>
+						<div>
+							<p class="text-neutral-600 dark:text-neutral-400 text-lg">
+								Favorite Movie
+							</p>
+							<p class="text-neutral-800 dark:text-neutral-200">
+								Star Wars III
+							</p>
+						</div>
+						<div>
+							<p class="text-neutral-600 dark:text-neutral-400 text-lg">
+								Favorite Series
+							</p>
+							<p class="text-neutral-800 dark:text-neutral-200">
+								Breaking Bad
+							</p>
+						</div>
+						<div>
+							<p class="text-neutral-600 dark:text-neutral-400 text-lg">
+								Favorite Game
+							</p>
+							<p class="text-neutral-800 dark:text-neutral-200">
+								Dragon Age Origins
+							</p>
+						</div>
+						<div>
+							<p class="text-neutral-600 dark:text-neutral-400 text-lg">
+								Favorite Food
+							</p>
+							<p class="text-neutral-800 dark:text-neutral-200">
+								Pizza
+							</p>
+						</div>
+					</div>
+
+					<a 
+						href="#experience" 
+						class="flex items-center gap-x-2 text-primary uppercase mt-8 transition-colors duration-200 hover:text-primary-400"
+					>
+						<i class="ph ph-arrow-down text-3xl"></i>
+						<p>
+							Want to know about my
+							<br>
+							work experience?
+						</p>
+					</a>
+				</div>
+
+				<div class="h-full maw-w-none lg:max-w-sm 2xl:max-w-xl w-full border-4 shrink-0"></div>
+			</div>
+
+			<div class="flex gap-x-2 items-center">
+				<hr class="flex-1 h-1 border-1 border-neutral-700 dark:border-neutral-400">
+				<i class="ph-fill ph-circle text-neutral-700 dark:text-neutral-400"></i>
+				<hr class="flex-1 h-1 border-1 border-neutral-700 dark:border-neutral-400">
+			</div>
+		</section>
+
+		<section 
+			class="pb-4 lg:pb-12 scroll-mt-40"
+			id="experience"
+		>
+			<h4 class="text-3xl lg:text-4xl mb-4 lg:mb-8 text-neutral-950 dark:text-neutral-100">
+				Get to Know my
+				<br>
+				Journey
+			</h4>
+			<div class="flex flex-col lg:flex-row">
+				<div class="max-w-none lg:max-w-md w-full border-r-2 border-neutral-700 mb-4 lg:mb-0">
+					<p class="text-xl pb-1 border-b-2 mb-4 text-neutral-700 dark:text-neutral-100 border-neutral-700">
+						Experience
+					</p>
+
+					<ul class="flex flex-col gap-y-4 pb-4 border-b-2 border-neutral-700">
+						<li class="border-b-2 pb-4 border-neutral-700">
+							<p class="text-3xl leading-8 mb-2 text-primary">
+								Front end
+								<br>
+								Developer
+							</p>
+							<p class="text-xl text-neutral-700 dark:text-neutral-100">
+								Pátio Mobile
+							</p>
+							<p class="text-neutral-600 dark:text-neutral-400 mb-2">
+								08/2022 - Present
+							</p>
+							<p class="text-neutral-700 dark:text-neutral-300 mr-4">
+								I work developing mobile applications and vehicle yard management websites
+							</p>
+							
+							<p class="uppercase text-primary-600 dark:text-primary text-lg mt-2 mb-1">
+								Skills
+							</p>
+							<hr class="w-4 border-neutral-700 dark:border-neutral-100 mb-1">
+							<ul class="mr-4 list-disc list-inside">
+								<li>
+									React Native
+								</li>
+								<li>
+									HTML | CSS | JavaScript
+								</li>
+							</ul>
+
+						</li>
+
+						<li class="">
+							<p class="text-3xl leading-8 mb-2 text-primary">
+								Creator &
+								<br>
+								Maintainer
+							</p>
+							<p class="text-xl text-neutral-700 dark:text-neutral-100">
+								CharacterVerse
+							</p>
+							<p class="text-neutral-600 dark:text-neutral-400 mb-2">
+								10/2023 - Present
+							</p>
+							<p class="text-neutral-700 dark:text-neutral-300 mr-4">
+								Creator and developer of social platform focused on character creation from any media universe such as anime, game, movie, etc.
+							</p>
+							<p class="uppercase text-primary-600 dark:text-primary text-lg mt-2 mb-1">
+								Skills
+							</p>
+							<hr class="w-4 border-neutral-700 dark:border-neutral-100 mb-1">
+							<ul class="mr-4 list-disc list-inside">
+								<li>
+									React JS | Next JS
+								</li>
+								<li>
+									HTML | CSS | Typescript
+								</li>
+								<li>
+									PostgreSQL
+								</li>
+							</ul>
+
+						</li>
+					</ul>
+				</div>
+				<div class="flex-1 flex flex-col border-b-0 lg:border-b-2 border-neutral-700">
+					<p class="text-xl pb-1 pl-0 lg:pl-4 lg:border-b-2 lg:mb-4 text-neutral-700 dark:text-neutral-100 border-neutral-700">
+						Skills
+					</p>
+					<hr class="block lg:hidden w-4 border-neutral-700 dark:border-neutral-100">
+
+					<ul class="w-full flex-1 pl-0 lg:pl-8 text-3xl lg:text-7xl grid grid-cols-3 justify-center place-content-center place-items-center gap-y-4 lg:gap-y-12">
+						<li class="text-neutral-700 dark:text-neutral-200 transition-colors duration-200 hover:text-primary hover:dark:text-primary-400">
+							<button 
+								type="button"
+								class="w-fit"
+							>
+								<i class="devicon-html5-plain"></i>
+								<div class="mt-1 text-xl xl:text-3xl 2xl:text-4xl">
+									<p class="uppercase">
+										HTML
+									</p>
+								</div>
+							</button>
+						</li>
+						<li class="text-neutral-700 dark:text-neutral-200 transition-colors duration-200 hover:text-primary hover:dark:text-primary-400">
+							<button 
+								type="button"
+								class="w-fit"
+							>
+								<i class="devicon-css3-plain"></i>
+								<div class="mt-1 text-xl xl:text-3xl 2xl:text-4xl">
+									<p class="uppercase">
+										CSS
+									</p>
+								</div>
+							</button>
+						</li>
+						<li class="text-neutral-700 dark:text-neutral-200 transition-colors duration-200 hover:text-primary hover:dark:text-primary-400">
+							<button 
+								type="button"
+								class="w-fit"
+							>
+								<i class="devicon-typescript-plain"></i>
+								<div class="mt-1 text-xl xl:text-3xl 2xl:text-4xl">
+									<p class="uppercase">
+										Typescript
+									</p>
+								</div>
+							</button>
+						</li>
+						<li class="text-neutral-700 dark:text-neutral-200 transition-colors duration-200 hover:text-primary hover:dark:text-primary-400">
+							<button 
+								type="button"
+								class="w-fit"
+							>
+								<i class="devicon-react-plain"></i>
+								<div class="mt-1 text-xl xl:text-3xl 2xl:text-4xl">
+									<p class="uppercase">
+										React
+										<br>
+										Ecosystem
+									</p>
+								</div>
+							</button>
+						</li>
+						<li class="text-neutral-700 dark:text-neutral-200 transition-colors duration-200 hover:text-primary hover:dark:text-primary-400">
+							<button 
+								type="button"
+								class="w-fit"
+							>
+								<i class="devicon-nextjs-plain"></i>
+								<div class="mt-1 text-xl xl:text-3xl 2xl:text-4xl">
+									<p class="uppercase">
+										Next JS
+									</p>
+								</div>
+							</button>
+						</li>
+						<li class="text-neutral-700 dark:text-neutral-200 transition-colors duration-200 hover:text-primary hover:dark:text-primary-400">
+							<button 
+								type="button"
+								class="w-fit"
+							>
+								<i class="devicon-react-plain"></i>
+								<div class="mt-1 text-xl xl:text-3xl 2xl:text-4xl">
+									<p class="uppercase">
+										React<br>Native
+									</p>
+								</div>
+							</button>
+						</li>
+						<li class="text-neutral-700 dark:text-neutral-200 transition-colors duration-200 hover:text-primary hover:dark:text-primary-400">
+							<button 
+								type="button"
+								class="w-fit"
+							>
+								<i class="devicon-tailwindcss-plain"></i>
+								<div class="mt-1 text-xl xl:text-3xl 2xl:text-4xl">
+									<p class="uppercase">
+										Tailwind CSS
+									</p>
+								</div>
+							</button>
+						</li>
+						<li class="text-neutral-700 dark:text-neutral-200 transition-colors duration-200 hover:text-primary hover:dark:text-primary-400">
+							<button 
+								type="button"
+								class="w-fit"
+							>
+								<i class="devicon-github-plain"></i>
+								<div class="mt-1 text-xl xl:text-3xl 2xl:text-4xl">
+									<p class="uppercase">
+										Github
+									</p>
+								</div>
+							</button>
+						</li>
+						<li class="text-neutral-700 dark:text-neutral-200 transition-colors duration-200 hover:text-primary hover:dark:text-primary-400">
+							<button 
+								type="button"
+								class="w-fit"
+							>
+								<i class="devicon-linux-plain"></i>
+								<div class="mt-1 text-xl xl:text-3xl 2xl:text-4xl">
+									<p class="uppercase">
+										Linux
+									</p>
+								</div>
+							</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section 
+			class="pb-4 lg:pb-8 scroll-mt-40"
+			id="projects"
+		>
+			<h4 class="text-3xl lg:text-4xl mb-4 lg:mb-8 text-neutral-950 dark:text-neutral-100">
+				Projects
+				<br>
+				Portfolio
+			</h4>
+
+			<ul class="flex flex-col gap-y-8">
+
+				<li class="flex flex-col lg:flex-row gap-4 pb-4 lg:pb-8 border-b-2 border-neutral-600">
+					<img 
+						src="/images/characterverse.jpg" 
+						alt=""
+						class="aspect-[16/10] h-full max-w-xl rounded shadow-xl object-cover"
+					>
+					<div class="flex flex-col">
+						<p class="text-3xl font-semibold mb-2 text-neutral-950 dark:text-neutral-100">
+							CharacterVerse
+						</p>
+						<p class="text-neutral-700 dark:text-neutral-300">
+							Social platform focused on character creation from any media universe such as anime, game, movie, etc
+						</p>
+						<p class="uppercase text-primary-600 dark:text-primary text-lg mt-2 mb-1">
+							Skills
+						</p>
+						<hr class="w-4 border-neutral-700 dark:border-neutral-100 mb-1">
+						<ul class="mr-4 list-disc list-inside">
+							<li>
+								React JS | Next JS
+							</li>
+							<li>
+								HTML | CSS | Typescript
+							</li>
+							<li>
+								PostgreSQL
+							</li>
+						</ul>
+						<div class="flex-1 flex items-end text-2xl mt-4 lg:mt-0">
+							<a 
+								href="https://characterverse.app/"
+								target="_blank"
+								class="flex items-center gap-x-2 text-primary transition-colors duration-200 hover:text-primary-400"
+							>	
+								<i class="ph ph-arrow-square-out text-3xl"></i>
+								<p>
+									See online
+								</p>
+							</a>
+						</div>
+					</div>
+				</li>
+
+				<li class="flex flex-col lg:flex-row-reverse gap-4 pb-4 lg:pb-8 border-b-2 border-neutral-600">
+					<img 
+						src="/images/vinlandsupply.jpg" 
+						alt=""
+						class="aspect-[16/10] h-full max-w-xl rounded shadow-xl object-cover"
+					>
+					<div class="flex flex-col">
+						<p class="text-3xl font-semibold mb-2 text-neutral-950 dark:text-neutral-100">
+							Vinland Supply
+						</p>
+						<p class="text-neutral-700 dark:text-neutral-300">
+							Dashboard of fictional company based on the anime Vinland Saga, it has diverse graphs and tables, fully responsive, products management and visualization.
+						</p>
+						<p class="uppercase text-primary-600 dark:text-primary text-lg mt-2 mb-1">
+							Skills
+						</p>
+						<hr class="w-4 border-neutral-700 dark:border-neutral-100 mb-1">
+						<ul class="mr-4 list-disc list-inside">
+							<li>
+								React JS | Vite JS
+							</li>
+							<li>
+								HTML | CSS | Typescript
+							</li>
+							<li>
+								Styled Components
+							</li>
+						</ul>
+
+						<div class="flex-1 flex items-end text-2xl gap-x-4 mt-4 lg:mt-0">
+							<a 
+								href="https://vinland-supply-react-dashboard.vercel.app/"
+								target="_blank"
+								class="flex items-center gap-x-2 text-primary transition-colors duration-200 hover:text-primary-400"
+							>	
+								<i class="ph ph-arrow-square-out text-3xl"></i>
+								<p>
+									See online
+								</p>
+							</a>
+							<a 
+								href="https://github.com/GabrielSouzaCosta/vinland-supply-react-dashboard"
+								target="_blank"
+								class="flex items-center gap-x-2 text-neutral-950 dark:text-neutral-300 transition-colors duration-200 hover:text-neutral-600 hover:dark:text-neutral-50"
+							>	
+								<i class="ph ph-github-logo text-3xl"></i>
+								<p>
+									Visit code
+								</p>
+							</a>
+						</div>
+					</div>
+				</li>
+
+				<li class="flex flex-col lg:flex-row gap-4 pb-4 lg:pb-8 border-b-2 border-neutral-600">
+					<img 
+						src="/images/catmeow.jpg" 
+						alt=""
+						class="aspect-[16/10] h-full max-w-xl rounded shadow-xl object-cover"
+					>
+					<div class="flex flex-col">
+						<p class="text-3xl font-semibold mb-2 text-neutral-950 dark:text-neutral-100">
+							CatMeow
+						</p>
+						<p class="text-neutral-700 dark:text-neutral-300">
+							Website to generate random pictures of cats and also interesting facts about them.
+						</p>
+						<p class="uppercase text-primary-600 dark:text-primary text-lg mt-2 mb-1">
+							Skills
+						</p>
+						<hr class="w-4 border-neutral-700 dark:border-neutral-100 mb-1">
+						<ul class="mr-4 list-disc list-inside">
+							<li>
+								React JS | Next JS
+							</li>
+							<li>
+								HTML | CSS | Typescript
+							</li>
+							<li>
+								Tailwind CSS
+							</li>
+						</ul>
+
+						<div class="flex-1 flex items-end text-2xl gap-x-4 mt-4 lg:mt-0">
+							<a 
+								href="https://catmeow.vercel.app/"
+								target="_blank"
+								class="flex items-center gap-x-2 text-primary transition-colors duration-200 hover:text-primary-400"
+							>	
+								<i class="ph ph-arrow-square-out text-3xl"></i>
+								<p>
+									See online
+								</p>
+							</a>
+							<a 
+								href="https://github.com/GabrielSouzaCosta/catmeow"
+								target="_blank"
+								class="flex items-center gap-x-2 text-neutral-950 dark:text-neutral-300 transition-colors duration-200 hover:text-neutral-600 hover:dark:text-neutral-50"
+							>	
+								<i class="ph ph-github-logo text-3xl"></i>
+								<p>
+									Visit code
+								</p>
+							</a>
+						</div>
+					</div>
+				</li>
+
+				<li class="flex flex-col lg:flex-row-reverse gap-4 pb-4 lg:pb-8 border-b-2 border-neutral-600">
+					<img 
+						src="/images/luv&kitchen.jpg" 
+						alt=""
+						class="aspect-[16/10] h-full max-w-xl rounded shadow-xl object-cover"
+					>
+					<div class="flex flex-col items-start w-full">
+						<p class="text-3xl font-semibold mb-2 text-neutral-950 dark:text-neutral-100">
+							Luv&Kitchen
+						</p>
+						<p class="text-neutral-700 dark:text-neutral-300">
+							Recipes website. It consumes the API 
+							<a href="https://www.themealdb.com/" target="_blank" rel="noopener noreferrer">
+								TheMealDb
+							</a>
+						</p>
+						<p class="uppercase text-primary-600 dark:text-primary text-lg mt-2 mb-1">
+							Skills
+						</p>
+						<hr class="w-4 border-neutral-700 dark:border-neutral-100 mb-1">
+						<ul class="mr-4 list-disc list-inside">
+							<li>
+								React JS | Next JS
+							</li>
+							<li>
+								HTML | CSS | JavaScript
+							</li>
+							<li>
+								Styled Components
+							</li>
+							<li>
+								Firebase
+							</li>
+						</ul>
+
+						<div class="flex-1 flex items-end text-2xl gap-x-4 mt-4 lg:mt-0">
+							<a 
+								href="https://luvekitchen.vercel.app/"
+								target="_blank"
+								class="flex items-center gap-x-2 text-primary transition-colors duration-200 hover:text-primary-400"
+							>	
+								<i class="ph ph-arrow-square-out text-3xl"></i>
+								<p>
+									See online
+								</p>
+							</a>
+							<a 
+								href="https://github.com/GabrielSouzaCosta/luvekitchen"
+								target="_blank"
+								class="flex items-center gap-x-2 text-neutral-950 dark:text-neutral-300 transition-colors duration-200 hover:text-neutral-600 hover:dark:text-neutral-50"
+							>	
+								<i class="ph ph-github-logo text-3xl"></i>
+								<p>
+									Visit code
+								</p>
+							</a>
+						</div>
+					</div>
+				</li>
+
+				<li class="flex flex-col lg:flex-row gap-4">
+					<img 
+						src="/images/usable.jpg" 
+						alt=""
+						class="aspect-[16/10] h-full max-w-xl rounded shadow-xl object-cover"
+					>
+					<div class="flex flex-col">
+						<p class="text-3xl font-semibold mb-2 text-neutral-950 dark:text-neutral-100">
+							Usable
+						</p>
+						<p class="text-neutral-700 dark:text-neutral-300">
+							Landing Page about accessibility in the web, giving some tips of how to implement accessibility in websites.
+						</p>
+						<p class="uppercase text-primary-600 dark:text-primary text-lg mt-2 mb-1">
+							Skills
+						</p>
+						<hr class="w-4 border-neutral-700 dark:border-neutral-100 mb-1">
+						<ul class="mr-4 list-disc list-inside">
+							<li>
+								HTML | CSS | Typescript
+							</li>
+							<li>
+								Tailwind CSS
+							</li>
+						</ul>
+
+						<div class="flex-1 flex items-end text-2xl gap-x-4 mt-4 lg:mt-0">
+							<a 
+								href="https://usableweb.netlify.app/"
+								target="_blank"
+								class="flex items-center gap-x-2 text-primary transition-colors duration-200 hover:text-primary-400"
+							>	
+								<i class="ph ph-arrow-square-out text-3xl"></i>
+								<p>
+									See online
+								</p>
+							</a>
+							<a 
+								href="https://github.com/GabrielSouzaCosta/acessibleweb"
+								target="_blank"
+								class="flex items-center gap-x-2 text-neutral-950 dark:text-neutral-300 transition-colors duration-200 hover:text-neutral-600 hover:dark:text-neutral-50"
+							>	
+								<i class="ph ph-github-logo text-3xl"></i>
+								<p>
+									Visit code
+								</p>
+							</a>
+						</div>
+					</div>
+				</li>
+
+			</ul>
+		</section>
+
+		<section 
+			class="pb-4 lg:pb-12 scroll-mt-40"
+			id="services"
+		>
+			<h4 class="text-3xl lg:text-4xl mb-4 lg:mb-8 text-neutral-950 dark:text-neutral-100">
+				Services
+			</h4>
+			<div class="flex flex-col lg:flex-row gap-4">
+				<div class="w-full lg:w-1/2 p-0 lg:p-4 transition-shadow duration-300 lg:shadow-sm hover:lg:shadow-lg">
+					<img 
+						src="/images/web.svg" 
+						alt=""
+						class="aspect-[16/10] w-full object-cover rounded drop-shadow-xl"
+					>
+					<div class="my-2">
+						<p class="text-xl lg:text-2xl mb-1 text-neutral-950 dark:text-neutral-100">
+							Websites
+						</p>
+						<p class="text-neutral-700 dark:text-neutral-300">
+							Development and implementation of 
+							<strong class="uppercase font-light text-primary-600 dark:text-primary">
+								performant, accessible and easy-to-use 
+							</strong>
+							websites that add value to users and companies
+						</p>
+					</div>
+					<p class="text-lg mb-1 text-primary-600 dark:text-primary">
+						Why should you need a website?
+					</p>
+					<ul class="text-neutral-700 dark:text-neutral-300 flex flex-col gap-y-3">
+						<li class="align-middle">
+							<i class="ph ph-check text-primary dark:text-primary-400 mr-1"></i>
+							<strong class="text-neutral-800 dark:text-neutral-100">
+								Online Presence
+							</strong>
+							: Having a website establishes an online presence, making it easier for people to find and learn about your company.
+						</li>
+						<li class="align-middle">
+							<i class="ph ph-check text-primary dark:text-primary-400 mr-1"></i>
+							<strong class="text-neutral-800 dark:text-neutral-100">
+								24/7 Accessibility
+							</strong>
+							: Unlike physical stores, websites are accessible 24/7, allowing customers to engage with your business at their convenience.
+						</li>
+						<li class="align-middle">
+							<i class="ph ph-check text-primary dark:text-primary-400 mr-1"></i>
+							<strong class="text-neutral-800 dark:text-neutral-100">
+								Marketing and Advertising
+							</strong>
+							: Websites facilitate various marketing strategies, including SEO, content marketing, and online advertising, driving traffic and increasing sales.
+						</li>
+						<li class="align-middle">
+							<i class="ph ph-check text-primary dark:text-primary-400 mr-1"></i>
+							<strong class="text-neutral-800 dark:text-neutral-100">
+								Credibility
+							</strong>
+							: A professional website enhances your business's credibility and trustworthiness among potential customers.
+						</li>
+						<li>
+							And more...
+						</li>
+					</ul>
+				</div>
+				<div class="w-full lg:w-1/2 p-0 lg:p-4 transition-shadow duration-300 lg:shadow-sm hover:lg:shadow-lg">
+					<img 
+						src="/images/mobile.svg" 
+						alt=""
+						class="aspect-[16/10] w-full object-cover rounded drop-shadow-xl"
+					>
+					<div class="my-2">
+						<p class="text-xl lg:text-2xl mb-1 text-neutral-950 dark:text-neutral-100">
+							Mobile Apps
+						</p>
+						<p class="text-neutral-700 dark:text-neutral-300">
+							Development and implementation of 
+							<strong class="uppercase font-light text-primary-600 dark:text-primary">
+								fast and user-friendly 
+							</strong>
+							mobile applications for Android and iOS systems
+						</p>
+					</div>
+					<p class="text-lg mb-1 text-primary-600 dark:text-primary">
+						Why should you need an app?
+					</p>
+					<ul class="text-neutral-700 dark:text-neutral-300 flex flex-col gap-y-3">
+						<li class="align-middle">
+							<i class="ph ph-check text-primary dark:text-primary-400 mr-1"></i>
+							<strong class="text-neutral-800 dark:text-neutral-100">
+								Enhanced User Experience
+							</strong>
+							: Mobile apps offer a more personalized and efficient user experience tailored to the device, leading to higher user satisfaction.
+						</li>
+						<li class="align-middle">
+							<i class="ph ph-check text-primary dark:text-primary-400 mr-1"></i>
+							<strong class="text-neutral-800 dark:text-neutral-100">
+								Direct Marketing Channel
+							</strong>
+							: Apps allow businesses to send push notifications, directly reaching users and keeping them engaged with promotions, updates, and offers.
+						</li>
+						<li class="align-middle">
+							<i class="ph ph-check text-primary dark:text-primary-400 mr-1"></i>
+							<strong class="text-neutral-800 dark:text-neutral-100">
+								Offline Access
+							</strong>
+								: Unlike websites, some app functionalities can work offline, ensuring users can access certain features even without an internet connection.
+						</li>
+						<li class="align-middle">
+							<i class="ph ph-check text-primary dark:text-primary-400 mr-1"></i>
+							<strong class="text-neutral-800 dark:text-neutral-100">
+								Faster Loading and Performance
+							</strong>
+							: Mobile apps, once downloaded, load faster than websites and provide quicker access to content and features, leading to higher user engagement.
+						</li>
+						<li>
+							And more...
+						</li>
+					</ul>
+				</div>
+			</div>
+			<a href="#contact" class="flex items-center gap-x-2 text-primary uppercase mt-4 lg:mt-8 transition-colors duration-200 hover:text-primary-400 scroll-mt-40">
+				<i class="ph ph-arrow-down text-2xl"></i>
+				<p>
+					I need an app or website!
+ 				</p>
+			</a>
+		</section>
+
+		<section 
+			class="mb-8 lg:mb-16 scroll-mt-40"
+			id="contact"
+		>
+			<div class="py-12">
+				<h6 class="text-4xl mb-2 text-neutral-900 dark:text-neutral-300">
+					Contact Me
+				</h6>
+				<p class="text-neutral-600 dark:text-neutral-300 mb-4">
+					Get in touch, we&apos;ll create great things together!
+				</p>
+
+				<form 
+					id="contact-form"
+				>
+					<label 
+						for="name"
+						class="mb-4 flex flex-col gap-y-2 text-neutral-700 dark:text-neutral-300"
+					>
+						<span class="block">
+							Name
+						</span>
+						<input 
+							type="text"
+							id="name"
+							name="name"							
+							class="bg-neutral-100 dark:bg-neutral-800 border-2 border-neutral-700 dark:border-neutral-100/50 h-10 max-w-sm w-full p-2"
+							placeholder="Obi-Wan Kenobi"
+						>
+					</label>
+					<label 
+						for="email"
+						class="mb-4 flex flex-col gap-y-2 text-neutral-700 dark:text-neutral-300"
+					>
+						<span class="block">
+							Email
+						</span>
+						<input 
+							type="email"
+							id="email"
+							name="email"
+							placeholder="obiwankenobi@jedi.com"
+							class="bg-neutral-100 dark:bg-neutral-800 border-2 border-neutral-700 dark:border-neutral-100/50 h-10 max-w-sm w-full p-2"
+						>
+					</label>
+					<label 
+						for="message"
+						class="mb-4 flex flex-col gap-y-2 text-neutral-700 dark:text-neutral-300"
+					>
+						<span class="block">
+							Message
+						</span>
+						<textarea 
+							class="bg-neutral-100 dark:bg-neutral-800 border-2 border-neutral-700 dark:border-neutral-100/50 max-w-sm w-full p-2"
+							id="message"
+							name="message"
+							rows="6"
+							placeholder="Hi, how are you?\nI need an app for my spaceship"
+						></textarea>
+					</label>
+					
+					<div id="loading" class="hidden items-center gap-x-2">
+						<svg xmlns="http://www.w3.org/2000/svg" class="animate-spin w-5 h-5 text-primary-600 dark:text-primary" width="32" height="32" viewBox="0 0 256 256"><path d="M232,128a104,104,0,0,1-208,0c0-41,23.81-78.36,60.66-95.27a8,8,0,0,1,6.68,14.54C60.15,61.59,40,93.27,40,128a88,88,0,0,0,176,0c0-34.73-20.15-66.41-51.34-80.73a8,8,0,0,1,6.68-14.54C208.19,49.64,232,87,232,128Z" fill="currentColor"></path></svg>
+						<p class="text-primary-600 dark:text-primary">
+							Sending message..
+						</p>
+					</div>
+					<button 
+						class="flex items-center gap-x-2 text-lg text-primary-600 dark:text-primary transition-colors duration-200 hover:text-neutral-900 hover:dark:text-primary-400"
+						type="submit"
+						id="send-message"
+					>
+						Send message
+						<i class="ph ph-paper-plane-tilt text-xl"></i>
+					</button>
+				</form>
+			</div>
+		</section>
+
+	</main>
+</Main>
+
+<script is:inline src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+<script is:inline>
+	const validator = new window.JustValidate('#contact-form', {
+		focusInvalidField: true,
+		errorFieldCssClass: 'border-red-600',
+		validateBeforeSubmitting: true,
+	});
+
+	validator
+		.addField('#name', [
+				{
+					rule: 'required',
+					errorMessage: 'Please enter your name'
+				}
+			]
+		)
+		.addField('#email', [
+				{
+					rule: 'required',
+					errorMessage: 'Please enter your email'
+				},
+				{
+					rule: 'email',
+					errorMessage: 'Please enter a valid email'
+				},
+			]
+		)
+		.addField('#message', [
+				{
+					rule: 'required',
+					errorMessage: 'Please enter your message'
+				}
+			]
+		)
+
+	validator.onSuccess(async (e) => {
+		const loading = document.getElementById('loading');
+		loading.classList.remove('hidden');
+		loading.classList.add('flex');
+
+		const button = document.getElementById('send-message');
+		button.classList.remove('flex');
+		button.classList.add('hidden');
+
+    const formData = new FormData(e.target);
+
+    const response = await fetch("/api/send-email", {
+      method: "POST",
+      body: formData,
+    });
+    const data = await response.json();
+    const { success } = data;
+		if (success) {
+			window.location.href = '/email-sent'
+		}
+	})
+</script>

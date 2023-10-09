@@ -1,8 +1,13 @@
-<h1>Personal Portfolio Website</h2>
+# Astro with Tailwind
 
-The site contains my contact details and my main projects. It has dark mode and is in Portuguese and English.
+```sh
+npm create astro@latest -- --template with-tailwindcss
+```
 
-link: https://gabrielsouzacosta.github.io/
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/with-tailwindcss)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/with-tailwindcss)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/with-tailwindcss/devcontainer.json)
 
-![Screenshot from 2022-09-12 07-45-46](https://user-images.githubusercontent.com/79537042/189635006-ae4fbcaa-09ae-4af0-9521-9f99d6e3955d.png)
+Astro comes with [Tailwind](https://tailwindcss.com) support out of the box. This example showcases how to style your Astro project with Tailwind.
 
+For complete setup instructions, please see our [Tailwind Integration Guide](https://docs.astro.build/en/guides/integrations-guide/tailwind).

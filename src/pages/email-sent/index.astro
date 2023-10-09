@@ -1,0 +1,33 @@
+---
+import Main from '@/layouts/main.astro';
+---
+
+<Main
+	content={{
+		title:"Email successfully sent"
+	}}
+>
+	<main class="container h-remaining-screen">
+		<div class="flex flex-col justify-center items-center h-full">
+			<i class="ph ph-check-fat lg:text-[8rem] text-primary mb-4"></i>
+			<h1 class="text-3xl lg:text-4xl xl:text-5xl font-semibold mb-2 text-neutral-900 dark:text-neutral-50">
+				Email Sent Successfully!
+			</h1>
+			<h2 class="flex items-center gap-x-2 text-xl lg:text-2xl font-semibold text-neutral-600 dark:text-neutral-300 mb-2">
+				I greatly appreciate your contact
+				<i class="ph-fill text-2xl ph-smiley"></i>
+			</h2>
+			<h3 class="text-md font-semibold text-neutral-500 dark:text-neutral-400">
+				I&apos;ll reply as soon as possible
+			</h3>
+
+			<a 
+				href="/"
+				class="text-md font-semibold text-primary mt-4 transition-colors duration-200 hover:text-neutral-900 hover:dark:text-primary-400"
+			>
+				Go back to Home
+			</a>
+		</div>
+
+	</main>
+</Main>

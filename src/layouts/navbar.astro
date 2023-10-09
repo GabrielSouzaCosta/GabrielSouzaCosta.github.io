@@ -1,0 +1,66 @@
+---
+import Sidebar from "@/components/Sidebar.tsx";
+import ThemeToggle from "../components/ThemeToggle.astro";
+import LanguageSwitcher from '../components/LanguageSwitcher.tsx'
+---
+
+<header
+  class="h-14 border-b-2 border-neutral-600 flex items-center sticky top-0 bg-white/10 dark:bg-neutral-950/10 backdrop-blur-sm z-50"
+>
+  <div class="container flex justify-between items-center">
+    <a 
+      href="/#hero" 
+      class="flex gap-x-4 items-center text-neutral-700 dark:text-neutral-300"
+    >
+      <p class="text-4xl font-logo">
+        GSC
+      </p>
+      <div>
+        <p>
+          Web | Mobile
+        </p>
+        <p class="text-center text-xs">
+          &lt; Developer &gt;
+        </p>
+      </div>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-x-8">
+      <ul class="flex items-center gap-x-8 2xl:gap-x-12 text-neutral-800 dark:text-neutral-300">
+        <li class="transition-colors hover:text-primary-600 hover:dark:text-primary-400">
+          <a href="/#about">
+            About me
+          </a>
+        </li>
+        <li class="transition-colors hover:text-primary-600 hover:dark:text-primary-400">
+          <a href="/#experience">
+            Experience
+          </a>
+        </li>
+        <li class="transition-colors hover:text-primary-600 hover:dark:text-primary-400">
+          <a href="/#projects">
+            Projects
+          </a>
+        </li>
+        <li class="transition-colors hover:text-primary-600 hover:dark:text-primary-400">
+          <a href="/#services">
+            Services
+          </a>
+        </li>
+        <li class="transition-colors hover:text-primary-600 hover:dark:text-primary-400">
+          <a href="/#contact">
+            Contact
+          </a>
+        </li>
+      </ul>
+      <div class="flex gap-x-4 items-center">
+        <LanguageSwitcher client:load />
+        <div>
+          <ThemeToggle />
+        </div>
+      </div>
+    </nav>
+
+    <Sidebar client:load/>
+  </div>
+</header>
