@@ -46,25 +46,27 @@ i18next.changeLanguage('en');
 						<div class="flex gap-x-8 text-xl">
 							<a 
 								href="#contact"
-								class="text-neutral-950 font-medium dark:text-neutral-100"
+								class="uppercase text-primary-600 font-medium dark:text-primary hover:text-neutral-950 hover:dark:text-primary-400 transition-colors duration-200"
 							>
 								Contact me
 							</a>
 							<a 
 								href="#projects"
-								class="text-neutral-950 font-medium dark:text-neutral-100"
+								class="uppercase text-neutral-950 font-medium dark:text-neutral-100"
 							>
-								Look my Projects
+								My Projects
 							</a>
 						</div>
 					</div>
 				</div>
-				<div class="mt-12 lg:mt-32">
-					<Image 
+				<div class="mt-8 xl:mt-24 2xl:mt-32 max-w-full overflow-hidden flex justify-end">
+					<img 
 						src="/images/planet.png" 
 						alt=""
 						width={687}
+						loading="eager"
 						height={525}
+						class="w-11/12 lg:w-full object-contain"
 					/>
 				</div>
 
@@ -83,6 +85,9 @@ i18next.changeLanguage('en');
 								class="text-neutral-900 dark:text-neutral-300 transition-all duration-200 hover:text-primary-600 hover:dark:text-primary-400"
 							>
 								<i class="ph ph-linkedin-logo"></i>
+								<span class="sr-only">
+									Linkedin
+								</span>
 							</a>
 							<a 
 								href="https://github.com/GabrielSouzaCosta"
@@ -91,6 +96,9 @@ i18next.changeLanguage('en');
 								class="text-neutral-900 dark:text-neutral-300 transition-all duration-200 hover:text-primary-600 hover:dark:text-primary-400"
 							>
 								<i class="ph ph-github-logo"></i>
+								<span class="sr-only">
+									Github
+								</span>
 							</a>
 							<a 
 								href="https://www.instagram.com/webdev_gabriel/"
@@ -99,6 +107,9 @@ i18next.changeLanguage('en');
 								class="text-neutral-900 dark:text-neutral-300 transition-all duration-200 hover:text-primary-600 hover:dark:text-primary-400"
 							>
 								<i class="ph ph-instagram-logo"></i>
+								<span class="sr-only">
+									Instagram
+								</span>
 							</a>
 						</div>
 					</div>
@@ -203,16 +214,10 @@ i18next.changeLanguage('en');
 
 				<div class="h-full maw-w-none lg:max-w-sm 2xl:max-w-xl w-full border-4 shrink-0"></div>
 			</div>
-
-			<div class="flex gap-x-2 items-center">
-				<hr class="flex-1 h-1 border-1 border-neutral-700 dark:border-neutral-400">
-				<i class="ph-fill ph-circle text-neutral-700 dark:text-neutral-400"></i>
-				<hr class="flex-1 h-1 border-1 border-neutral-700 dark:border-neutral-400">
-			</div>
 		</section>
 
 		<section 
-			class="pb-4 lg:pb-12 scroll-mt-40"
+			class="pb-8 lg:pb-12 scroll-mt-40"
 			id="experience"
 		>
 			<h3 class="text-3xl lg:text-4xl mb-4 lg:mb-8 text-neutral-950 dark:text-neutral-100">
@@ -424,7 +429,7 @@ i18next.changeLanguage('en');
 		</section>
 
 		<section 
-			class="pb-4 lg:pb-8 scroll-mt-40"
+			class="pb-8 scroll-mt-40"
 			id="projects"
 		>
 			<h4 class="text-3xl lg:text-4xl mb-4 lg:mb-8 text-neutral-950 dark:text-neutral-100">
@@ -433,7 +438,7 @@ i18next.changeLanguage('en');
 				Portfolio
 			</h4>
 
-			<ul class="flex flex-col gap-y-8">
+			<ul class="flex flex-col gap-y-8 max-w-full overflow-hidden">
 
 				<li class="flex flex-col lg:flex-row gap-4 pb-4 lg:pb-8 border-b-2 border-neutral-600">
 					<Image
@@ -441,7 +446,7 @@ i18next.changeLanguage('en');
 						width={1920}
 						height={971}
 						alt=""
-						class="h-full max-w-xl  rounded shadow-xl object-cover"
+						class="max-w-full lg:max-w-xl rounded shadow-xl object-cover"
 					/>
 					<div class="flex flex-col">
 						<p class="text-3xl font-semibold mb-2 text-neutral-950 dark:text-neutral-100">
@@ -486,7 +491,7 @@ i18next.changeLanguage('en');
 						width={1920}
 						height={971}
 						alt=""
-						class="aspect-[16/10] h-full max-w-xl rounded shadow-xl object-cover"
+						class="max-w-full lg:max-w-xl rounded shadow-xl object-cover"
 					/>
 					<div class="flex flex-col">
 						<p class="text-3xl font-semibold mb-2 text-neutral-950 dark:text-neutral-100">
@@ -542,7 +547,7 @@ i18next.changeLanguage('en');
 						alt=""
 						width={1920}
 						height={971}
-						class="aspect-[16/10] h-full max-w-xl rounded shadow-xl object-cover"
+						class="max-w-full lg:max-w-xl rounded shadow-xl object-cover"
 					/>
 					<div class="flex flex-col">
 						<p class="text-3xl font-semibold mb-2 text-neutral-950 dark:text-neutral-100">
@@ -598,7 +603,7 @@ i18next.changeLanguage('en');
 						width={1920}
 						height={971}
 						alt=""
-						class="aspect-[16/10] h-full max-w-xl rounded shadow-xl object-cover"
+						class="max-w-full lg:max-w-xl rounded shadow-xl object-cover"
 					/>
 					<div class="flex flex-col items-start w-full">
 						<p class="text-3xl font-semibold mb-2 text-neutral-950 dark:text-neutral-100">
@@ -660,7 +665,7 @@ i18next.changeLanguage('en');
 						width={1920}
 						height={971}
 						alt=""
-						class="aspect-[16/10] h-full max-w-xl rounded shadow-xl object-cover"
+						class="max-w-full lg:max-w-xl rounded shadow-xl object-cover"
 					/>
 					<div class="flex flex-col">
 						<p class="text-3xl font-semibold mb-2 text-neutral-950 dark:text-neutral-100">
@@ -711,7 +716,7 @@ i18next.changeLanguage('en');
 		</section>
 
 		<section 
-			class="pb-4 lg:pb-12 scroll-mt-40"
+			class="pb-6 lg:pb-12 scroll-mt-40"
 			id="services"
 		>
 			<h5 class="text-3xl lg:text-4xl mb-4 lg:mb-8 text-neutral-950 dark:text-neutral-100">

@@ -5,6 +5,7 @@ const Sidebar = () => {
   return (
     <Sheet>
       <SheetTrigger
+        aria-label="Open sidebar menu"
         className="block lg:hidden text-2xl text-neutral-700 dark:text-neutral-300"
       >
         <i className="ph ph-list"></i>

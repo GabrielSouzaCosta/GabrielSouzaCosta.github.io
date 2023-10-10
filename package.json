@@ -24,6 +24,7 @@
     "@types/react-dom": "^18.2.10",
     "astro": "^3.2.3",
     "astro-i18next": "^1.0.0-beta.21",
+    "astro-robots-txt": "^1.0.0",
     "autoprefixer": "^10.4.15",
     "canvas-confetti": "^1.6.0",
     "class-variance-authority": "^0.7.0",
