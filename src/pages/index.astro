@@ -1,10 +1,10 @@
 ---
+import { Image } from 'astro:assets';
 import Main from '../layouts/main.astro';
 import i18next from 'i18next';
 
 i18next.changeLanguage('en');
 ---
-
 <Main
 	content={{
 		title:"GSC - Web & Mobile Developer"
@@ -22,7 +22,7 @@ i18next.changeLanguage('en');
 					</p>
 					<div class="border-l-4 pl-4 border-neutral-900 dark:border-neutral-400 mb-8">
 						<h1
-							class="text-3xl lg:text-5xl font-medium mb-2 leading-9 lg:leading-[3.25rem] text-neutral-900 dark:text-neutral-300"
+							class="text-3xl lg:text-5xl font-medium leading-9 lg:leading-[3.25rem] text-neutral-900 dark:text-neutral-300"
 						>
 							<span>
 								I&apos;m<br>
@@ -31,12 +31,12 @@ i18next.changeLanguage('en');
 								Gabriel 
 							</span>
 							Souza Costa
+							<span class="block mt-2 text-2xl lg:text-4xl text-neutral-900 dark:text-neutral-300">
+								Web & Mobile
+								<br>
+								Developer
+							</span>
 						</h1>
-						<h2 class="text-2xl lg:text-4xl text-neutral-900 dark:text-neutral-300">
-							Web & Mobile
-							<br>
-							Developer
-						</h2>
 					</div>
 		
 					<div>
@@ -60,7 +60,12 @@ i18next.changeLanguage('en');
 					</div>
 				</div>
 				<div class="mt-12 lg:mt-32">
-					<img src="/images/planet.png" alt="">
+					<Image 
+						src="/images/planet.png" 
+						alt=""
+						width={687}
+						height={525}
+					/>
 				</div>
 
 				<div class="absolute top-0 right-0 w-40 h-40 border-t-4 border-r-4 border-neutral-900 dark:border-neutral-400"></div>
@@ -114,15 +119,15 @@ i18next.changeLanguage('en');
 		>
 			<div class="py-8 lg:py-12 flex flex-col lg:flex-row gap-8 lg:gap-16">
 				<div>
-					<h3 class="text-4xl leading-8 mb-8 text-neutral-950 dark:text-neutral-100">
+					<h2 class="text-4xl leading-8 mb-8 text-neutral-950 dark:text-neutral-100">
 						About
 						<br>
 						<span class="border-b-4 border-neutral-700 dark:border-neutral-200">
 							me
 						</span>
-					</h3>
+					</h2>
 					<p class="text-neutral-700 dark:text-neutral-300 align-middle gap-x-1">
-						Hello there! I'm Gabriel Souza Costa, a passionate <strong class="uppercase text-primary dark:text-primary-400">Front End</strong> Developer with a love for creating appealing, accessible, and user-friendly web applications. My journey into programming began with Python, but I discovered my true passion in web development. I've been immersed in technology since childhood, exploring Flash games and the web, modding games, learning and interacting with different devices and softwares
+						Hello there! I'm Gabriel Souza Costa, a passionate <strong class="uppercase text-primary-600 dark:text-primary-400">Front End</strong> Developer with a love for creating appealing, accessible, and user-friendly web applications. My journey into programming began with Python, but I discovered my true passion in web development. I've been immersed in technology since childhood, exploring Flash games and the web, modding games, learning and interacting with different devices and softwares
 					</p>
 
 					<hr class="flex-1 h-1 border-1 border-neutral-700 my-4">
@@ -130,7 +135,7 @@ i18next.changeLanguage('en');
 						Hobbies & Interests
 					</p>
 					<p class="text-neutral-700 dark:text-neutral-300">
-						I like to watch animes, some series and movies, I also like to go to gym where I relax my mind. I&apos;m very interested in learning about <strong class="uppercase text-primary dark:text-primary-400">design</strong> apart from programming.
+						I like to watch animes, some series and movies, I also like to go to gym where I relax my mind. I&apos;m very interested in learning about <strong class="uppercase text-primary-600 dark:text-primary-400">design</strong> apart from programming.
 					</p>
 					<div class="grid grid-cols-2 gap-y-2 mt-4">
 						<div>
@@ -185,7 +190,7 @@ i18next.changeLanguage('en');
 
 					<a 
 						href="#experience" 
-						class="flex items-center gap-x-2 text-primary uppercase mt-8 transition-colors duration-200 hover:text-primary-400"
+						class="flex items-center gap-x-2 text-primary-600 dark:text-primary uppercase mt-8 transition-colors duration-200 hover:text-neutral-900 hover:dark:text-primary-400"
 					>
 						<i class="ph ph-arrow-down text-3xl"></i>
 						<p>
@@ -210,11 +215,11 @@ i18next.changeLanguage('en');
 			class="pb-4 lg:pb-12 scroll-mt-40"
 			id="experience"
 		>
-			<h4 class="text-3xl lg:text-4xl mb-4 lg:mb-8 text-neutral-950 dark:text-neutral-100">
+			<h3 class="text-3xl lg:text-4xl mb-4 lg:mb-8 text-neutral-950 dark:text-neutral-100">
 				Get to Know my
 				<br>
 				Journey
-			</h4>
+			</h3>
 			<div class="flex flex-col lg:flex-row">
 				<div class="max-w-none lg:max-w-md w-full border-r-2 border-neutral-700 mb-4 lg:mb-0">
 					<p class="text-xl pb-1 border-b-2 mb-4 text-neutral-700 dark:text-neutral-100 border-neutral-700">
@@ -242,7 +247,7 @@ i18next.changeLanguage('en');
 								Skills
 							</p>
 							<hr class="w-4 border-neutral-700 dark:border-neutral-100 mb-1">
-							<ul class="mr-4 list-disc list-inside">
+							<ul class="mr-4 list-disc list-inside text-neutral-700 dark:text-neutral-300">
 								<li>
 									React Native
 								</li>
@@ -272,7 +277,7 @@ i18next.changeLanguage('en');
 								Skills
 							</p>
 							<hr class="w-4 border-neutral-700 dark:border-neutral-100 mb-1">
-							<ul class="mr-4 list-disc list-inside">
+							<ul class="mr-4 list-disc list-inside text-neutral-700 dark:text-neutral-300">
 								<li>
 									React JS | Next JS
 								</li>
@@ -431,11 +436,13 @@ i18next.changeLanguage('en');
 			<ul class="flex flex-col gap-y-8">
 
 				<li class="flex flex-col lg:flex-row gap-4 pb-4 lg:pb-8 border-b-2 border-neutral-600">
-					<img 
+					<Image
 						src="/images/characterverse.jpg" 
+						width={1920}
+						height={971}
 						alt=""
-						class="aspect-[16/10] h-full max-w-xl rounded shadow-xl object-cover"
-					>
+						class="h-full max-w-xl  rounded shadow-xl object-cover"
+					/>
 					<div class="flex flex-col">
 						<p class="text-3xl font-semibold mb-2 text-neutral-950 dark:text-neutral-100">
 							CharacterVerse
@@ -447,7 +454,7 @@ i18next.changeLanguage('en');
 							Skills
 						</p>
 						<hr class="w-4 border-neutral-700 dark:border-neutral-100 mb-1">
-						<ul class="mr-4 list-disc list-inside">
+						<ul class="mr-4 list-disc list-inside text-neutral-700 dark:text-neutral-300">
 							<li>
 								React JS | Next JS
 							</li>
@@ -474,11 +481,13 @@ i18next.changeLanguage('en');
 				</li>
 
 				<li class="flex flex-col lg:flex-row-reverse gap-4 pb-4 lg:pb-8 border-b-2 border-neutral-600">
-					<img 
+					<Image
 						src="/images/vinlandsupply.jpg" 
+						width={1920}
+						height={971}
 						alt=""
 						class="aspect-[16/10] h-full max-w-xl rounded shadow-xl object-cover"
-					>
+					/>
 					<div class="flex flex-col">
 						<p class="text-3xl font-semibold mb-2 text-neutral-950 dark:text-neutral-100">
 							Vinland Supply
@@ -490,7 +499,7 @@ i18next.changeLanguage('en');
 							Skills
 						</p>
 						<hr class="w-4 border-neutral-700 dark:border-neutral-100 mb-1">
-						<ul class="mr-4 list-disc list-inside">
+						<ul class="mr-4 list-disc list-inside text-neutral-700 dark:text-neutral-300">
 							<li>
 								React JS | Vite JS
 							</li>
@@ -528,11 +537,13 @@ i18next.changeLanguage('en');
 				</li>
 
 				<li class="flex flex-col lg:flex-row gap-4 pb-4 lg:pb-8 border-b-2 border-neutral-600">
-					<img 
+					<Image
 						src="/images/catmeow.jpg" 
 						alt=""
+						width={1920}
+						height={971}
 						class="aspect-[16/10] h-full max-w-xl rounded shadow-xl object-cover"
-					>
+					/>
 					<div class="flex flex-col">
 						<p class="text-3xl font-semibold mb-2 text-neutral-950 dark:text-neutral-100">
 							CatMeow
@@ -544,7 +555,7 @@ i18next.changeLanguage('en');
 							Skills
 						</p>
 						<hr class="w-4 border-neutral-700 dark:border-neutral-100 mb-1">
-						<ul class="mr-4 list-disc list-inside">
+						<ul class="mr-4 list-disc list-inside text-neutral-700 dark:text-neutral-300">
 							<li>
 								React JS | Next JS
 							</li>
@@ -582,11 +593,13 @@ i18next.changeLanguage('en');
 				</li>
 
 				<li class="flex flex-col lg:flex-row-reverse gap-4 pb-4 lg:pb-8 border-b-2 border-neutral-600">
-					<img 
+					<Image
 						src="/images/luv&kitchen.jpg" 
+						width={1920}
+						height={971}
 						alt=""
 						class="aspect-[16/10] h-full max-w-xl rounded shadow-xl object-cover"
-					>
+					/>
 					<div class="flex flex-col items-start w-full">
 						<p class="text-3xl font-semibold mb-2 text-neutral-950 dark:text-neutral-100">
 							Luv&Kitchen
@@ -601,7 +614,7 @@ i18next.changeLanguage('en');
 							Skills
 						</p>
 						<hr class="w-4 border-neutral-700 dark:border-neutral-100 mb-1">
-						<ul class="mr-4 list-disc list-inside">
+						<ul class="mr-4 list-disc list-inside text-neutral-700 dark:text-neutral-300">
 							<li>
 								React JS | Next JS
 							</li>
@@ -642,11 +655,13 @@ i18next.changeLanguage('en');
 				</li>
 
 				<li class="flex flex-col lg:flex-row gap-4">
-					<img 
-						src="/images/usable.jpg" 
+					<Image
+						src="/images/usable.jpg"
+						width={1920}
+						height={971}
 						alt=""
 						class="aspect-[16/10] h-full max-w-xl rounded shadow-xl object-cover"
-					>
+					/>
 					<div class="flex flex-col">
 						<p class="text-3xl font-semibold mb-2 text-neutral-950 dark:text-neutral-100">
 							Usable
@@ -658,7 +673,7 @@ i18next.changeLanguage('en');
 							Skills
 						</p>
 						<hr class="w-4 border-neutral-700 dark:border-neutral-100 mb-1">
-						<ul class="mr-4 list-disc list-inside">
+						<ul class="mr-4 list-disc list-inside text-neutral-700 dark:text-neutral-300">
 							<li>
 								HTML | CSS | Typescript
 							</li>
@@ -699,16 +714,18 @@ i18next.changeLanguage('en');
 			class="pb-4 lg:pb-12 scroll-mt-40"
 			id="services"
 		>
-			<h4 class="text-3xl lg:text-4xl mb-4 lg:mb-8 text-neutral-950 dark:text-neutral-100">
+			<h5 class="text-3xl lg:text-4xl mb-4 lg:mb-8 text-neutral-950 dark:text-neutral-100">
 				Services
-			</h4>
+			</h5>
 			<div class="flex flex-col lg:flex-row gap-4">
 				<div class="w-full lg:w-1/2 p-0 lg:p-4 transition-shadow duration-300 lg:shadow-sm hover:lg:shadow-lg">
-					<img 
-						src="/images/web.svg" 
+					<Image
+						src="/images/web.png" 
+						width={513}
+						height={243}
 						alt=""
 						class="aspect-[16/10] w-full object-cover rounded drop-shadow-xl"
-					>
+					/>
 					<div class="my-2">
 						<p class="text-xl lg:text-2xl mb-1 text-neutral-950 dark:text-neutral-100">
 							Websites
@@ -759,11 +776,13 @@ i18next.changeLanguage('en');
 					</ul>
 				</div>
 				<div class="w-full lg:w-1/2 p-0 lg:p-4 transition-shadow duration-300 lg:shadow-sm hover:lg:shadow-lg">
-					<img 
-						src="/images/mobile.svg" 
+					<Image
+						src="/images/mobile.png" 
 						alt=""
+						width={495}
+						height={249}
 						class="aspect-[16/10] w-full object-cover rounded drop-shadow-xl"
-					>
+					/>
 					<div class="my-2">
 						<p class="text-xl lg:text-2xl mb-1 text-neutral-950 dark:text-neutral-100">
 							Mobile Apps
@@ -814,7 +833,7 @@ i18next.changeLanguage('en');
 					</ul>
 				</div>
 			</div>
-			<a href="#contact" class="flex items-center gap-x-2 text-primary uppercase mt-4 lg:mt-8 transition-colors duration-200 hover:text-primary-400 scroll-mt-40">
+			<a href="#contact" class="flex items-center gap-x-2 text-primary-600 dark:text-primary uppercase mt-4 lg:mt-8 transition-colors duration-200 hover:text-neutral-900 hover:dark:text-primary-400 scroll-mt-40">
 				<i class="ph ph-arrow-down text-2xl"></i>
 				<p>
 					I need an app or website!
