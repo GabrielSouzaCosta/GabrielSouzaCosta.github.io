@@ -3,7 +3,7 @@ import tailwind from '@astrojs/tailwind';
 import react from "@astrojs/react";
 import node from "@astrojs/node";
 import astroI18next from "astro-i18next";
-import vercelEdge from '@astrojs/vercel/edge';
+import vercel from '@astrojs/vercel/serverless'
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,5 +13,5 @@ export default defineConfig({
     astroI18next()
   ],
   output: 'hybrid',
-  adapter: vercelEdge()
+  adapter: vercel()
 });
