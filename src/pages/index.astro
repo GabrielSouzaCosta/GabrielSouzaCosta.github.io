@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import Main from '../layouts/main.astro';
-import i18next from 'i18next';
+import i18next, { t } from 'i18next';
 
 i18next.changeLanguage('en');
 ---
@@ -18,14 +18,14 @@ i18next.changeLanguage('en');
 			<div class="h-5/6 w-full flex flex-col xl:flex-row justify-start lg:justify-between gap-x-0 xl:gap-x-20 relative">
 				<div>
 					<p class="uppercase text-neutral-700 dark:text-neutral-300 mb-2">
-						Hi, nice to meet you!
+						{t("Hi, nice to meet you!")}
 					</p>
 					<div class="border-l-4 pl-4 border-neutral-900 dark:border-neutral-400 mb-8">
 						<h1
 							class="text-3xl lg:text-5xl font-medium leading-9 lg:leading-[3.25rem] text-neutral-900 dark:text-neutral-300"
 						>
 							<span>
-								I&apos;m<br>
+								{t("I'm")}<br>
 							</span>
 							<span class="text-primary">
 								Gabriel 
@@ -40,21 +40,23 @@ i18next.changeLanguage('en');
 					</div>
 		
 					<div>
-						<p class="text-neutral-700 dark:text-neutral-300 text-xl mb-4">
-							Translating your dreams into reality, through code
+						<p class="text-neutral-700 dark:text-neutral-300 text-xl mb-6">
+							{t("Translating your dreams into reality, through code")}
 						</p>
 						<div class="flex gap-x-8 text-xl">
 							<a 
 								href="#contact"
-								class="uppercase text-primary-600 font-medium dark:text-primary hover:text-neutral-950 hover:dark:text-primary-400 transition-colors duration-200"
+								class="group text-primary-600 font-medium dark:text-primary hover:text-neutral-950 hover:dark:text-primary-400 transition-colors duration-200"
 							>
-								Contact me
+								{t("Contact me")}
+								<hr class="group-hover:w-14 w-0 transition-all duration-300 border-neutral-950 dark:border-primary hover:dark:border-primary-400">
 							</a>
 							<a 
 								href="#projects"
-								class="uppercase text-neutral-950 font-medium dark:text-neutral-100"
+								class="group text-neutral-950 font-medium hover:text-primary-600 dark:text-neutral-100"
 							>
-								My Projects
+								{t("My Projects")}
+								<hr class="group-hover:w-5 w-0 transition-all duration-300 border-neutral-950 dark:border-neutral-100 hover:border-primary-600 hover:dark:border-neutral-100">
 							</a>
 						</div>
 					</div>
@@ -66,7 +68,15 @@ i18next.changeLanguage('en');
 						width={687}
 						loading="eager"
 						height={525}
-						class="w-11/12 lg:w-full object-contain"
+						class="dark:hidden block w-11/12 lg:w-full object-contain"
+					/>
+					<img 
+						src="/images/planet-dark.png" 
+						alt=""
+						width={687}
+						loading="eager"
+						height={525}
+						class="hidden dark:block w-11/12 lg:w-full object-contain"
 					/>
 				</div>
 
@@ -75,7 +85,7 @@ i18next.changeLanguage('en');
 				<div class="absolute bottom-0 left-0 w-40 h-40 border-l-4 border-b-4 border-neutral-900 dark:border-neutral-400 flex items-end p-2">
 					<div>
 						<p class="mb-2 text-sm lg:text-lg flex items-center gap-x-1 text-neutral-900 dark:text-neutral-300">
-							Follow me! <i class="ph ph-smiley-wink text-2xl"></i>
+							{t("Follow me")}! <i class="ph ph-smiley-wink text-2xl"></i>
 						</p>
 						<div class="flex gap-x-2 text-3xl">
 							<a 
@@ -131,27 +141,33 @@ i18next.changeLanguage('en');
 			<div class="py-8 lg:py-12 flex flex-col lg:flex-row gap-8 lg:gap-16">
 				<div>
 					<h2 class="text-4xl leading-8 mb-8 text-neutral-950 dark:text-neutral-100">
-						About
+						{t("About")}
 						<br>
 						<span class="border-b-4 border-neutral-700 dark:border-neutral-200">
-							me
+							{t("me")}
 						</span>
 					</h2>
 					<p class="text-neutral-700 dark:text-neutral-300 align-middle gap-x-1">
-						Hello there! I'm Gabriel Souza Costa, a passionate <strong class="uppercase text-primary-600 dark:text-primary-400">Front End</strong> Developer with a love for creating appealing, accessible, and user-friendly web applications. My journey into programming began with Python, but I discovered my true passion in web development. I've been immersed in technology since childhood, exploring Flash games and the web, modding games, learning and interacting with different devices and softwares
+						{t("Hello there! I'm Gabriel Souza Costa, a passionate")}
+						<strong class="uppercase text-primary-600 dark:text-primary-400"> Front End </strong>
+						{t("Developer with a love for creating appealing, accessible, and user-friendly web applications. My journey into programming began with Python, but I discovered my true passion in web development. I've been immersed in technology since childhood, exploring Flash games and the web, modding games, learning and interacting with different devices and softwares")}
 					</p>
 
 					<hr class="flex-1 h-1 border-1 border-neutral-700 my-4">
 					<p class="text-2xl text-neutral-700 dark:text-neutral-300 mb-2">
-						Hobbies & Interests
+						{t("Hobbies & Interests")}
 					</p>
 					<p class="text-neutral-700 dark:text-neutral-300">
-						I like to watch animes, some series and movies, I also like to go to gym where I relax my mind. I&apos;m very interested in learning about <strong class="uppercase text-primary-600 dark:text-primary-400">design</strong> apart from programming.
+						{t("I like to watch animes, some series and movies, I also like to go to gym where I relax my mind. I&apos;m very interested in learning about")} 
+						<strong class="uppercase text-primary-600 dark:text-primary-400">
+							 design
+						</strong> 
+						{t("apart from programming.")}
 					</p>
 					<div class="grid grid-cols-2 gap-y-2 mt-4">
 						<div>
 							<p class="text-neutral-600 dark:text-neutral-400 text-lg">
-								Favorite Anime
+								{t("Favorite Anime")}
 							</p>
 							<p class="text-neutral-800 dark:text-neutral-200">
 								Hunter X Hunter
@@ -159,7 +175,7 @@ i18next.changeLanguage('en');
 						</div>
 						<div>
 							<p class="text-neutral-600 dark:text-neutral-400 text-lg">
-								Favorite Saga
+								{t("Favorite Saga")}
 							</p>
 							<p class="text-neutral-800 dark:text-neutral-200">
 								Star Wars
@@ -167,7 +183,7 @@ i18next.changeLanguage('en');
 						</div>
 						<div>
 							<p class="text-neutral-600 dark:text-neutral-400 text-lg">
-								Favorite Movie
+								{t("Favorite Movie")}
 							</p>
 							<p class="text-neutral-800 dark:text-neutral-200">
 								Star Wars III
@@ -175,7 +191,7 @@ i18next.changeLanguage('en');
 						</div>
 						<div>
 							<p class="text-neutral-600 dark:text-neutral-400 text-lg">
-								Favorite Series
+								{t("Favorite Series")}
 							</p>
 							<p class="text-neutral-800 dark:text-neutral-200">
 								Breaking Bad
@@ -183,7 +199,7 @@ i18next.changeLanguage('en');
 						</div>
 						<div>
 							<p class="text-neutral-600 dark:text-neutral-400 text-lg">
-								Favorite Game
+								{t("Favorite Game")}
 							</p>
 							<p class="text-neutral-800 dark:text-neutral-200">
 								Dragon Age Origins
@@ -191,7 +207,7 @@ i18next.changeLanguage('en');
 						</div>
 						<div>
 							<p class="text-neutral-600 dark:text-neutral-400 text-lg">
-								Favorite Food
+								{t("Favorite Food")}
 							</p>
 							<p class="text-neutral-800 dark:text-neutral-200">
 								Pizza
@@ -205,9 +221,9 @@ i18next.changeLanguage('en');
 					>
 						<i class="ph ph-arrow-down text-3xl"></i>
 						<p>
-							Want to know about my
+							{t("Want to know about my")}
 							<br>
-							work experience?
+							{t("work experience?")}
 						</p>
 					</a>
 				</div>
@@ -221,14 +237,14 @@ i18next.changeLanguage('en');
 			id="experience"
 		>
 			<h3 class="text-3xl lg:text-4xl mb-4 lg:mb-8 text-neutral-950 dark:text-neutral-100">
-				Get to Know my
+				{t("Get to Know my")}
 				<br>
-				Journey
+				{t("Journey")}
 			</h3>
 			<div class="flex flex-col lg:flex-row">
 				<div class="max-w-none lg:max-w-md w-full border-r-2 border-neutral-700 mb-4 lg:mb-0">
 					<p class="text-xl pb-1 border-b-2 mb-4 text-neutral-700 dark:text-neutral-100 border-neutral-700">
-						Experience
+						{t("Experience")}
 					</p>
 
 					<ul class="flex flex-col gap-y-4 pb-4 border-b-2 border-neutral-700">
@@ -242,14 +258,14 @@ i18next.changeLanguage('en');
 								Pátio Mobile
 							</p>
 							<p class="text-neutral-600 dark:text-neutral-400 mb-2">
-								08/2022 - Present
+								08/2022 - {t("Present")}
 							</p>
 							<p class="text-neutral-700 dark:text-neutral-300 mr-4">
-								I work developing mobile applications and vehicle yard management websites
+								{t("I work developing mobile applications and vehicle yard management websites")}
 							</p>
 							
 							<p class="uppercase text-primary-600 dark:text-primary text-lg mt-2 mb-1">
-								Skills
+								{t("Skills")}
 							</p>
 							<hr class="w-4 border-neutral-700 dark:border-neutral-100 mb-1">
 							<ul class="mr-4 list-disc list-inside text-neutral-700 dark:text-neutral-300">
@@ -265,21 +281,21 @@ i18next.changeLanguage('en');
 
 						<li class="">
 							<p class="text-3xl leading-8 mb-2 text-primary">
-								Creator &
+								{t("Creator &")}
 								<br>
-								Maintainer
+								{t("Maintainer")}
 							</p>
 							<p class="text-xl text-neutral-700 dark:text-neutral-100">
 								CharacterVerse
 							</p>
 							<p class="text-neutral-600 dark:text-neutral-400 mb-2">
-								10/2023 - Present
+								10/2023 - {t("Present")}
 							</p>
 							<p class="text-neutral-700 dark:text-neutral-300 mr-4">
-								Creator and developer of social platform focused on character creation from any media universe such as anime, game, movie, etc.
+								{t("Creator and developer of social platform focused on character creation from any media universe such as anime, game, movie, etc.")}
 							</p>
 							<p class="uppercase text-primary-600 dark:text-primary text-lg mt-2 mb-1">
-								Skills
+								{t("Skills")}
 							</p>
 							<hr class="w-4 border-neutral-700 dark:border-neutral-100 mb-1">
 							<ul class="mr-4 list-disc list-inside text-neutral-700 dark:text-neutral-300">
@@ -299,7 +315,7 @@ i18next.changeLanguage('en');
 				</div>
 				<div class="flex-1 flex flex-col border-b-0 lg:border-b-2 border-neutral-700">
 					<p class="text-xl pb-1 pl-0 lg:pl-4 lg:border-b-2 lg:mb-4 text-neutral-700 dark:text-neutral-100 border-neutral-700">
-						Skills
+						{t("Skills")}
 					</p>
 					<hr class="block lg:hidden w-4 border-neutral-700 dark:border-neutral-100">
 
@@ -433,9 +449,9 @@ i18next.changeLanguage('en');
 			id="projects"
 		>
 			<h4 class="text-3xl lg:text-4xl mb-4 lg:mb-8 text-neutral-950 dark:text-neutral-100">
-				Projects
+				{t("Projects")}
 				<br>
-				Portfolio
+				{t("Portfolio")}
 			</h4>
 
 			<ul class="flex flex-col gap-y-8 max-w-full overflow-hidden">
@@ -453,10 +469,10 @@ i18next.changeLanguage('en');
 							CharacterVerse
 						</p>
 						<p class="text-neutral-700 dark:text-neutral-300">
-							Social platform focused on character creation from any media universe such as anime, game, movie, etc
+							{t("Social platform focused on character creation from any media universe such as anime, game, movie, etc")}
 						</p>
 						<p class="uppercase text-primary-600 dark:text-primary text-lg mt-2 mb-1">
-							Skills
+							{t("Skills")}
 						</p>
 						<hr class="w-4 border-neutral-700 dark:border-neutral-100 mb-1">
 						<ul class="mr-4 list-disc list-inside text-neutral-700 dark:text-neutral-300">
@@ -478,7 +494,7 @@ i18next.changeLanguage('en');
 							>	
 								<i class="ph ph-arrow-square-out text-3xl"></i>
 								<p>
-									See online
+									{t("See online")}
 								</p>
 							</a>
 						</div>
@@ -498,10 +514,10 @@ i18next.changeLanguage('en');
 							Vinland Supply
 						</p>
 						<p class="text-neutral-700 dark:text-neutral-300">
-							Dashboard of fictional company based on the anime Vinland Saga, it has diverse graphs and tables, fully responsive, products management and visualization.
+							{t("Dashboard of fictional company based on the anime Vinland Saga, it has diverse graphs and tables, fully responsive, products management and visualization.")}
 						</p>
 						<p class="uppercase text-primary-600 dark:text-primary text-lg mt-2 mb-1">
-							Skills
+							{t("Skills")}
 						</p>
 						<hr class="w-4 border-neutral-700 dark:border-neutral-100 mb-1">
 						<ul class="mr-4 list-disc list-inside text-neutral-700 dark:text-neutral-300">
@@ -524,7 +540,7 @@ i18next.changeLanguage('en');
 							>	
 								<i class="ph ph-arrow-square-out text-3xl"></i>
 								<p>
-									See online
+									{t("See online")}
 								</p>
 							</a>
 							<a 
@@ -534,7 +550,7 @@ i18next.changeLanguage('en');
 							>	
 								<i class="ph ph-github-logo text-3xl"></i>
 								<p>
-									Visit code
+									{t("Visit code")}
 								</p>
 							</a>
 						</div>
@@ -554,10 +570,10 @@ i18next.changeLanguage('en');
 							CatMeow
 						</p>
 						<p class="text-neutral-700 dark:text-neutral-300">
-							Website to generate random pictures of cats and also interesting facts about them.
+							{t("Website to generate random pictures of cats and also interesting facts about them.")}
 						</p>
 						<p class="uppercase text-primary-600 dark:text-primary text-lg mt-2 mb-1">
-							Skills
+							{t("Skills")}
 						</p>
 						<hr class="w-4 border-neutral-700 dark:border-neutral-100 mb-1">
 						<ul class="mr-4 list-disc list-inside text-neutral-700 dark:text-neutral-300">
@@ -580,7 +596,7 @@ i18next.changeLanguage('en');
 							>	
 								<i class="ph ph-arrow-square-out text-3xl"></i>
 								<p>
-									See online
+									{t("See online")}
 								</p>
 							</a>
 							<a 
@@ -590,7 +606,7 @@ i18next.changeLanguage('en');
 							>	
 								<i class="ph ph-github-logo text-3xl"></i>
 								<p>
-									Visit code
+									{t("Visit code")}
 								</p>
 							</a>
 						</div>
@@ -610,13 +626,13 @@ i18next.changeLanguage('en');
 							Luv&Kitchen
 						</p>
 						<p class="text-neutral-700 dark:text-neutral-300">
-							Recipes website. It consumes the API 
+							{t("Recipes website. It consumes the API")}
 							<a href="https://www.themealdb.com/" target="_blank" rel="noopener noreferrer">
 								TheMealDb
 							</a>
 						</p>
 						<p class="uppercase text-primary-600 dark:text-primary text-lg mt-2 mb-1">
-							Skills
+							{t("Skills")}
 						</p>
 						<hr class="w-4 border-neutral-700 dark:border-neutral-100 mb-1">
 						<ul class="mr-4 list-disc list-inside text-neutral-700 dark:text-neutral-300">
@@ -642,7 +658,7 @@ i18next.changeLanguage('en');
 							>	
 								<i class="ph ph-arrow-square-out text-3xl"></i>
 								<p>
-									See online
+									{t("See online")}
 								</p>
 							</a>
 							<a 
@@ -652,7 +668,7 @@ i18next.changeLanguage('en');
 							>	
 								<i class="ph ph-github-logo text-3xl"></i>
 								<p>
-									Visit code
+									{t("Visit code")}
 								</p>
 							</a>
 						</div>
@@ -672,10 +688,10 @@ i18next.changeLanguage('en');
 							Usable
 						</p>
 						<p class="text-neutral-700 dark:text-neutral-300">
-							Landing Page about accessibility in the web, giving some tips of how to implement accessibility in websites.
+							{t("Landing Page about accessibility in the web, giving some tips of how to implement accessibility in websites.")}
 						</p>
 						<p class="uppercase text-primary-600 dark:text-primary text-lg mt-2 mb-1">
-							Skills
+							{t("Skills")}
 						</p>
 						<hr class="w-4 border-neutral-700 dark:border-neutral-100 mb-1">
 						<ul class="mr-4 list-disc list-inside text-neutral-700 dark:text-neutral-300">
@@ -695,7 +711,7 @@ i18next.changeLanguage('en');
 							>	
 								<i class="ph ph-arrow-square-out text-3xl"></i>
 								<p>
-									See online
+									{t("See online")}
 								</p>
 							</a>
 							<a 
@@ -705,7 +721,7 @@ i18next.changeLanguage('en');
 							>	
 								<i class="ph ph-github-logo text-3xl"></i>
 								<p>
-									Visit code
+									{t("Visit code")}
 								</p>
 							</a>
 						</div>
@@ -720,7 +736,7 @@ i18next.changeLanguage('en');
 			id="services"
 		>
 			<h5 class="text-3xl lg:text-4xl mb-4 lg:mb-8 text-neutral-950 dark:text-neutral-100">
-				Services
+				{t("Services")}
 			</h5>
 			<div class="flex flex-col lg:flex-row gap-4">
 				<div class="w-full lg:w-1/2 p-0 lg:p-4 transition-shadow duration-300 lg:shadow-sm hover:lg:shadow-lg">
@@ -736,47 +752,47 @@ i18next.changeLanguage('en');
 							Websites
 						</p>
 						<p class="text-neutral-700 dark:text-neutral-300">
-							Development and implementation of 
+							{t("Development and implementation of")} {" "}
 							<strong class="uppercase font-light text-primary-600 dark:text-primary">
-								performant, accessible and easy-to-use 
+								{t("performant, accessible and easy-to-use")} {" "}
 							</strong>
-							websites that add value to users and companies
+							{t("websites that add value to users and companies")}
 						</p>
 					</div>
 					<p class="text-lg mb-1 text-primary-600 dark:text-primary">
-						Why should you need a website?
+						{t("Why should you need a website?")}
 					</p>
 					<ul class="text-neutral-700 dark:text-neutral-300 flex flex-col gap-y-3">
 						<li class="align-middle">
 							<i class="ph ph-check text-primary dark:text-primary-400 mr-1"></i>
 							<strong class="text-neutral-800 dark:text-neutral-100">
-								Online Presence
+								{t("Online Presence")}:
 							</strong>
-							: Having a website establishes an online presence, making it easier for people to find and learn about your company.
+							{t("Having a website establishes an online presence, making it easier for people to find and learn about your company.")}
 						</li>
 						<li class="align-middle">
 							<i class="ph ph-check text-primary dark:text-primary-400 mr-1"></i>
 							<strong class="text-neutral-800 dark:text-neutral-100">
-								24/7 Accessibility
+								{t("24/7 Accessibility")}:
 							</strong>
-							: Unlike physical stores, websites are accessible 24/7, allowing customers to engage with your business at their convenience.
+							{t("Unlike physical stores, websites are accessible 24/7, allowing customers to engage with your business at their convenience.")}
 						</li>
 						<li class="align-middle">
 							<i class="ph ph-check text-primary dark:text-primary-400 mr-1"></i>
 							<strong class="text-neutral-800 dark:text-neutral-100">
-								Marketing and Advertising
+								{t("Marketing and Advertising")}:
 							</strong>
-							: Websites facilitate various marketing strategies, including SEO, content marketing, and online advertising, driving traffic and increasing sales.
+							{t("Websites facilitate various marketing strategies, including SEO, content marketing, and online advertising, driving traffic and increasing sales.")}
 						</li>
 						<li class="align-middle">
 							<i class="ph ph-check text-primary dark:text-primary-400 mr-1"></i>
 							<strong class="text-neutral-800 dark:text-neutral-100">
-								Credibility
+								{t("Credibility")}:
 							</strong>
-							: A professional website enhances your business's credibility and trustworthiness among potential customers.
+							{t("A professional website enhances your business's credibility and trustworthiness among potential customers.")}
 						</li>
 						<li>
-							And more...
+							{t("And more...")}
 						</li>
 					</ul>
 				</div>
@@ -790,50 +806,50 @@ i18next.changeLanguage('en');
 					/>
 					<div class="my-2">
 						<p class="text-xl lg:text-2xl mb-1 text-neutral-950 dark:text-neutral-100">
-							Mobile Apps
+							{t("Mobile Apps")}
 						</p>
 						<p class="text-neutral-700 dark:text-neutral-300">
-							Development and implementation of 
+							{t("Development and implementation of")} {" "}
 							<strong class="uppercase font-light text-primary-600 dark:text-primary">
-								fast and user-friendly 
+								{t("fast and user-friendly ")}
 							</strong>
-							mobile applications for Android and iOS systems
+							{t("mobile applications for Android and iOS systems")}
 						</p>
 					</div>
 					<p class="text-lg mb-1 text-primary-600 dark:text-primary">
-						Why should you need an app?
+						{t("Why should you need an app?")}
 					</p>
 					<ul class="text-neutral-700 dark:text-neutral-300 flex flex-col gap-y-3">
 						<li class="align-middle">
 							<i class="ph ph-check text-primary dark:text-primary-400 mr-1"></i>
 							<strong class="text-neutral-800 dark:text-neutral-100">
-								Enhanced User Experience
+								{t("Enhanced User Experience")}: 
 							</strong>
-							: Mobile apps offer a more personalized and efficient user experience tailored to the device, leading to higher user satisfaction.
+							{t("Mobile apps offer a more personalized and efficient user experience tailored to the device, leading to higher user satisfaction.")}
 						</li>
 						<li class="align-middle">
 							<i class="ph ph-check text-primary dark:text-primary-400 mr-1"></i>
 							<strong class="text-neutral-800 dark:text-neutral-100">
-								Direct Marketing Channel
+								{t("Direct Marketing Channel")}:
 							</strong>
-							: Apps allow businesses to send push notifications, directly reaching users and keeping them engaged with promotions, updates, and offers.
+							{t("Apps allow businesses to send push notifications, directly reaching users and keeping them engaged with promotions, updates, and offers.")}
 						</li>
 						<li class="align-middle">
 							<i class="ph ph-check text-primary dark:text-primary-400 mr-1"></i>
 							<strong class="text-neutral-800 dark:text-neutral-100">
-								Offline Access
+								{t("Offline Access")}:
 							</strong>
-								: Unlike websites, some app functionalities can work offline, ensuring users can access certain features even without an internet connection.
+								{t("Unlike websites, some app functionalities can work offline, ensuring users can access certain features even without an internet connection.")}
 						</li>
 						<li class="align-middle">
 							<i class="ph ph-check text-primary dark:text-primary-400 mr-1"></i>
 							<strong class="text-neutral-800 dark:text-neutral-100">
-								Faster Loading and Performance
+								{t("Faster Loading and Performance")}: 
 							</strong>
-							: Mobile apps, once downloaded, load faster than websites and provide quicker access to content and features, leading to higher user engagement.
+							{t("Mobile apps, once downloaded, load faster than websites and provide quicker access to content and features, leading to higher user engagement.")}
 						</li>
 						<li>
-							And more...
+						{t("And more...")}
 						</li>
 					</ul>
 				</div>
@@ -841,7 +857,7 @@ i18next.changeLanguage('en');
 			<a href="#contact" class="flex items-center gap-x-2 text-primary-600 dark:text-primary uppercase mt-4 lg:mt-8 transition-colors duration-200 hover:text-neutral-900 hover:dark:text-primary-400 scroll-mt-40">
 				<i class="ph ph-arrow-down text-2xl"></i>
 				<p>
-					I need an app or website!
+					{t("I need an app or website")}!
  				</p>
 			</a>
 		</section>
@@ -852,10 +868,10 @@ i18next.changeLanguage('en');
 		>
 			<div class="py-12">
 				<h6 class="text-4xl mb-2 text-neutral-900 dark:text-neutral-300">
-					Contact Me
+					{t("Contact Me")}
 				</h6>
 				<p class="text-neutral-600 dark:text-neutral-300 mb-4">
-					Get in touch, we&apos;ll create great things together!
+					{t("Get in touch, we'll create great things together!")}
 				</p>
 
 				<form 
@@ -866,7 +882,7 @@ i18next.changeLanguage('en');
 						class="mb-4 flex flex-col gap-y-2 text-neutral-700 dark:text-neutral-300"
 					>
 						<span class="block">
-							Name
+							{t("Name")}
 						</span>
 						<input 
 							type="text"
@@ -881,7 +897,7 @@ i18next.changeLanguage('en');
 						class="mb-4 flex flex-col gap-y-2 text-neutral-700 dark:text-neutral-300"
 					>
 						<span class="block">
-							Email
+							{t("Email")}
 						</span>
 						<input 
 							type="email"
@@ -896,21 +912,21 @@ i18next.changeLanguage('en');
 						class="mb-4 flex flex-col gap-y-2 text-neutral-700 dark:text-neutral-300"
 					>
 						<span class="block">
-							Message
+							{t("Message")}
 						</span>
 						<textarea 
 							class="bg-neutral-100 dark:bg-neutral-800 border-2 border-neutral-700 dark:border-neutral-100/50 max-w-sm w-full p-2"
 							id="message"
 							name="message"
 							rows="6"
-							placeholder="Hi, how are you?\nI need an app for my spaceship"
+							placeholder={t("Hi, how are you?\nI need an app for my spaceship")}
 						></textarea>
 					</label>
 					
 					<div id="loading" class="hidden items-center gap-x-2">
 						<svg xmlns="http://www.w3.org/2000/svg" class="animate-spin w-5 h-5 text-primary-600 dark:text-primary" width="32" height="32" viewBox="0 0 256 256"><path d="M232,128a104,104,0,0,1-208,0c0-41,23.81-78.36,60.66-95.27a8,8,0,0,1,6.68,14.54C60.15,61.59,40,93.27,40,128a88,88,0,0,0,176,0c0-34.73-20.15-66.41-51.34-80.73a8,8,0,0,1,6.68-14.54C208.19,49.64,232,87,232,128Z" fill="currentColor"></path></svg>
 						<p class="text-primary-600 dark:text-primary">
-							Sending message..
+							{t("Sending message..")}
 						</p>
 					</div>
 					<button 
@@ -918,7 +934,7 @@ i18next.changeLanguage('en');
 						type="submit"
 						id="send-message"
 					>
-						Send message
+						{t("Send message")}
 						<i class="ph ph-paper-plane-tilt text-xl"></i>
 					</button>
 				</form>
@@ -934,7 +950,32 @@ i18next.changeLanguage('en');
 		focusInvalidField: true,
 		errorFieldCssClass: 'border-red-600',
 		validateBeforeSubmitting: true,
-	});
+	}, [
+		{
+			key: "Please enter your name",
+			dict: {
+				"pt-BR": "Por favor, insira seu nome",
+			}
+		},
+		{
+			key: "Please enter your email",
+			dict: {
+				"pt-BR": "Por favor, insira seu email",
+			}
+		},
+		{
+			key: "Please enter a valid email",
+			dict: {
+				"pt-BR": "Por favor, insira um email válido",
+			}
+		},
+		{
+			key: "Please enter your message",
+			dict: {
+				"pt-BR": "Por favor, insira seu nome",
+			}
+		}
+	]);
 
 	validator
 		.addField('#name', [

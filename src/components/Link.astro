@@ -1,0 +1,18 @@
+---
+import i18next from "i18next";
+
+const {
+  href,
+  ...props
+} = Astro.props;
+
+const lng = i18next.language === 'en' ? '' : `/${i18next.language}`;
+const lnghref = lng + href;
+---
+
+<a 
+  href={lnghref}
+  { ...props }
+>
+  <slot/>
+</a>

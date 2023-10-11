@@ -2,6 +2,8 @@
 import Sidebar from "@/components/Sidebar.tsx";
 import ThemeToggle from "../components/ThemeToggle.astro";
 import LanguageSwitcher from '../components/LanguageSwitcher.tsx'
+import { t } from "i18next";
+import Link from "@/components/Link.astro";
 ---
 
 <header
@@ -28,29 +30,29 @@ import LanguageSwitcher from '../components/LanguageSwitcher.tsx'
     <nav class="hidden lg:flex items-center gap-x-8">
       <ul class="flex items-center gap-x-8 2xl:gap-x-12 text-neutral-800 dark:text-neutral-300">
         <li class="transition-colors hover:text-primary-600 hover:dark:text-primary-400">
-          <a href="/#about">
-            About me
-          </a>
+          <Link href="/#about">
+            {t("About me")}
+          </Link>
         </li>
         <li class="transition-colors hover:text-primary-600 hover:dark:text-primary-400">
-          <a href="/#experience">
-            Experience
-          </a>
+          <Link href="/#experience">
+            {t("Experience")}
+          </Link>
         </li>
         <li class="transition-colors hover:text-primary-600 hover:dark:text-primary-400">
-          <a href="/#projects">
-            Projects
-          </a>
+          <Link href="/#projects">
+            {t("Projects")}
+          </Link>
         </li>
         <li class="transition-colors hover:text-primary-600 hover:dark:text-primary-400">
-          <a href="/#services">
-            Services
-          </a>
+          <Link href="/#services">
+            {t("Services")}
+          </Link>
         </li>
         <li class="transition-colors hover:text-primary-600 hover:dark:text-primary-400">
-          <a href="/#contact">
-            Contact
-          </a>
+          <Link href="/#contact">
+            {t("Contact")}
+          </Link>
         </li>
       </ul>
       <div class="flex gap-x-4 items-center">
@@ -61,6 +63,10 @@ import LanguageSwitcher from '../components/LanguageSwitcher.tsx'
       </div>
     </nav>
 
-    <Sidebar client:load/>
+    <div class="flex gap-x-4 items-center lg:hidden">
+      <ThemeToggle />
+      <Sidebar client:load/>
+    </div>
+
   </div>
 </header>

@@ -1,3 +1,9 @@
+---
+import Link from "@/components/Link.astro";
+import { t } from "i18next";
+
+---
+
 <footer
   class="py-4 border-t-2 border-neutral-600 flex items-center z-50"
 >
@@ -23,29 +29,29 @@
       <nav>
         <ul class="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 2xl:gap-x-12 text-neutral-800 dark:text-neutral-300">
           <li class="transition-colors hover:text-primary-600 hover:dark:text-primary-400">
-            <a href="/#about">
-              About me
-            </a>
+            <Link href="/#about">
+              {t("About me")}
+            </Link>
           </li>
           <li class="transition-colors hover:text-primary-600 hover:dark:text-primary-400">
-            <a href="/#experience">
-              Experience
-            </a>
+            <Link href="/#experience">
+              {t("Experience")}
+            </Link>
           </li>
           <li class="transition-colors hover:text-primary-600 hover:dark:text-primary-400">
-            <a href="/#projects">
-              Projects
-            </a>
+            <Link href="/#projects">
+              {t("Projects")}
+            </Link>
           </li>
           <li class="transition-colors hover:text-primary-600 hover:dark:text-primary-400">
-            <a href="/#services">
-              Services
-            </a>
+            <Link href="/#services">
+              {t("Services")}
+            </Link>
           </li>
           <li class="transition-colors hover:text-primary-600 hover:dark:text-primary-400">
-            <a href="/#contact">
-              Contact
-            </a>
+            <Link href="/#contact">
+              {t("Contact")}
+            </Link>
           </li>
         </ul>
       </nav>
@@ -84,6 +90,17 @@
             Instagram
           </span>
         </a>
+        <a 
+          href="https://www.instagram.com/webdev_gabriel/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-neutral-900 dark:text-neutral-300 transition-all duration-200 hover:text-primary-600 hover:dark:text-primary-400"
+        >
+          <i class="ph ph-briefcase"></i>
+          <span class="sr-only">
+            CV
+          </span>
+        </a>
       </div>
     </div>
 
@@ -91,7 +108,7 @@
 
     <p class="flex items-center gap-x-2 text-sm text-neutral-600 dark:text-neutral-300">
       <i class="ph ph-copyright text-lg"></i>
-      2023 All rights reserved
+      2023 {t("All rights reserved")}
     </p>
   </div>
 </footer>
