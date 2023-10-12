@@ -1,6 +1,6 @@
 ---
 import Link from "@/components/Link.astro";
-import { t } from "i18next";
+import i18next, { t } from "i18next";
 
 ---
 
@@ -91,12 +91,13 @@ import { t } from "i18next";
           </span>
         </a>
         <a 
-          href="https://www.instagram.com/webdev_gabriel/"
+          href={i18next.language === "en" ? "https://1drv.ms/b/s!AviSJU2yuZBLtDzRxuRYIDUdae_J?e=SVENuh" : "https://1drv.ms/b/s!AviSJU2yuZBLtD3VN8UvCSqwNebz?e=eUtAq1"}
           target="_blank"
           rel="noopener noreferrer"
+          id="cv"
           class="text-neutral-900 dark:text-neutral-300 transition-all duration-200 hover:text-primary-600 hover:dark:text-primary-400"
         >
-          <i class="ph ph-briefcase"></i>
+          <i class="ph ph-file-text"></i>
           <span class="sr-only">
             CV
           </span>
@@ -106,9 +107,27 @@ import { t } from "i18next";
 
     <hr class="my-4 border-neutral-600">
 
-    <p class="flex items-center gap-x-2 text-sm text-neutral-600 dark:text-neutral-300">
+    <p class="flex items-center justify-center lg:justify-start gap-x-2 text-sm text-neutral-600 dark:text-neutral-300">
       <i class="ph ph-copyright text-lg"></i>
       2023 {t("All rights reserved")}
     </p>
   </div>
 </footer>
+
+<script is:inline src="https://unpkg.com/@popperjs/core@2"></script>
+<script is:inline src="https://unpkg.com/tippy.js@6"></script>
+<script is:inline>
+
+  tippy('#cv', {
+    content: 'CV',
+  });
+  tippy('.ph-instagram-logo', {
+    content: 'Instagram',
+  });
+  tippy('.ph-linkedin-logo', {
+    content: 'Linkedin',
+  });
+  tippy('.ph-github-logo', {
+    content: 'Github',
+  });
+</script>

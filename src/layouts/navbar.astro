@@ -27,8 +27,8 @@ import Link from "@/components/Link.astro";
       </div>
     </a>
 
-    <nav class="hidden lg:flex items-center gap-x-8">
-      <ul class="flex items-center gap-x-8 2xl:gap-x-12 text-neutral-800 dark:text-neutral-300">
+    <nav class="flex items-center gap-x-4 lg:gap-x-8">
+      <ul class="hidden lg:flex items-center gap-x-8 2xl:gap-x-12 text-neutral-800 dark:text-neutral-300">
         <li class="transition-colors hover:text-primary-600 hover:dark:text-primary-400">
           <Link href="/#about">
             {t("About me")}
@@ -56,17 +56,18 @@ import Link from "@/components/Link.astro";
         </li>
       </ul>
       <div class="flex gap-x-4 items-center">
-        <LanguageSwitcher client:load />
+        <div class="hidden lg:block">
+          <LanguageSwitcher client:load />
+        </div>
         <div>
           <ThemeToggle />
         </div>
       </div>
+      <div class="flex lg:hidden">
+        <Sidebar client:load/>
+      </div>
     </nav>
 
-    <div class="flex gap-x-4 items-center lg:hidden">
-      <ThemeToggle />
-      <Sidebar client:load/>
-    </div>
 
   </div>
 </header>
