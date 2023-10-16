@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import Main from '../layouts/main.astro';
 import i18next, { t } from 'i18next';
+import Link from '@/components/Link.astro';
 
 i18next.changeLanguage('en');
 ---
@@ -20,9 +21,9 @@ i18next.changeLanguage('en');
 					<p class="uppercase text-neutral-700 dark:text-neutral-300 mb-2">
 						{t("Hi, nice to meet you!")}
 					</p>
-					<div class="border-l-4 pl-4 border-neutral-900 dark:border-neutral-400 mb-8">
+					<div class="border-l-4 pl-4 border-neutral-900 dark:border-neutral-400 mb-4 2xl:mb-8">
 						<h1
-							class="text-3xl lg:text-5xl font-medium leading-9 lg:leading-[3.25rem] text-neutral-900 dark:text-neutral-300"
+							class="text-3xl xl:text-4xl 2xl:text-5xl font-medium leading-9 lg:leading-[3.25rem] text-neutral-900 dark:text-neutral-300"
 						>
 							<span>
 								{t("I'm")}<br>
@@ -31,7 +32,7 @@ i18next.changeLanguage('en');
 								Gabriel 
 							</span>
 							Souza Costa
-							<span class="block mt-2 text-2xl lg:text-4xl text-neutral-900 dark:text-neutral-300">
+							<span class="block mt-2 text-2xl xl:text-3xl 2xl:text-4xl text-neutral-900 dark:text-neutral-300">
 								Web & Mobile
 								<br>
 								Developer
@@ -40,24 +41,24 @@ i18next.changeLanguage('en');
 					</div>
 		
 					<div>
-						<p class="text-neutral-700 dark:text-neutral-300 text-xl mb-6">
+						<p class="text-neutral-700 dark:text-neutral-300 text-xl mb-4 2xl:mb-6">
 							{t("Translating your dreams into reality, through code")}
 						</p>
 						<div class="flex gap-x-8 text-xl">
-							<a 
+							<Link
 								href="#contact"
 								class="group text-primary-600 font-medium dark:text-primary hover:text-neutral-950 hover:dark:text-primary-400 transition-colors duration-200"
 							>
 								{t("Contact me")}
 								<hr class="group-hover:w-14 w-0 transition-all duration-300 border-neutral-950 dark:border-primary hover:dark:border-primary-400">
-							</a>
-							<a 
+							</Link>
+							<Link 
 								href="#projects"
 								class="group text-neutral-950 font-medium hover:text-primary-600 dark:text-neutral-100"
 							>
 								{t("My Projects")}
 								<hr class="group-hover:w-5 w-0 transition-all duration-300 border-neutral-950 dark:border-neutral-100 hover:border-primary-600 hover:dark:border-neutral-100">
-							</a>
+							</Link>
 						</div>
 					</div>
 				</div>
@@ -215,7 +216,7 @@ i18next.changeLanguage('en');
 						</div>
 					</div>
 
-					<a 
+					<Link 
 						href="#experience" 
 						class="flex items-center gap-x-2 text-primary-600 dark:text-primary uppercase mt-8 transition-colors duration-200 hover:text-neutral-900 hover:dark:text-primary-400"
 					>
@@ -225,7 +226,7 @@ i18next.changeLanguage('en');
 							<br>
 							{t("work experience?")}
 						</p>
-					</a>
+					</Link>
 				</div>
 
 				<div class="h-full maw-w-none lg:max-w-sm 2xl:max-w-xl w-full border-4 shrink-0"></div>
@@ -855,12 +856,12 @@ i18next.changeLanguage('en');
 					</ul>
 				</div>
 			</div>
-			<a href="#contact" class="flex items-center gap-x-2 text-primary-600 dark:text-primary uppercase mt-4 lg:mt-8 transition-colors duration-200 hover:text-neutral-900 hover:dark:text-primary-400 scroll-mt-40">
+			<Link href="#contact" class="flex items-center gap-x-2 text-primary-600 dark:text-primary uppercase mt-4 lg:mt-8 transition-colors duration-200 hover:text-neutral-900 hover:dark:text-primary-400 scroll-mt-40">
 				<i class="ph ph-arrow-down text-2xl"></i>
 				<p>
 					{t("I need an app or website")}!
  				</p>
-			</a>
+			</Link>
 		</section>
 
 		<section 

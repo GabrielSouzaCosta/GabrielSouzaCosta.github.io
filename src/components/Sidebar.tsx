@@ -3,6 +3,7 @@ import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTrigger } from
 import { t } from 'i18next'
 import LanguageSwitcher from './LanguageSwitcher'
 import ThemeToggle from './ThemeToggle.astro'
+import Link from './Link.astro'
 
 const Sidebar = () => {
 
@@ -28,29 +29,29 @@ const Sidebar = () => {
           <nav className="flex-1 flex flex-col items-center justify-center gap-y-8 h-full">
             <ul className="flex flex-col text-lg uppercase justify-center items-center h-full gap-y-4 text-neutral-800 dark:text-neutral-300">
               <li className="transition-colors hover:text-primary-600 hover:dark:text-primary-400">
-                <a href="/#about" onClick={closeSidebar}>
+                <Link href="/#about" onClick={closeSidebar}>
                   {t("About me")}
-                </a>
+                </Link>
               </li>
               <li className="transition-colors hover:text-primary-600 hover:dark:text-primary-400">
-                <a href="/#experience" onClick={closeSidebar}>
+                <Link href="/#experience" onClick={closeSidebar}>
                   {t("Experience")}
-                </a>
+                </Link>
               </li>
               <li className="transition-colors hover:text-primary-600 hover:dark:text-primary-400">
-                <a href="/#projects" onClick={closeSidebar}>
+                <Link href="/#projects" onClick={closeSidebar}>
                   {t("Projects")}
-                </a>
+                </Link>
               </li>
               <li className="transition-colors hover:text-primary-600 hover:dark:text-primary-400">
-                <a href="/#services" onClick={closeSidebar}>
+                <Link href="/#services" onClick={closeSidebar}>
                   {t("Services")}
-                </a>
+                </Link>
               </li>
               <li className="transition-colors hover:text-primary-600 hover:dark:text-primary-400">
-                <a href="/#contact" onClick={closeSidebar}>
+                <Link href="/#contact" onClick={closeSidebar}>
                   {t("Contact")}
-                </a>
+                </Link>
               </li>
             </ul>
             <div className="flex gap-x-4 items-center">
