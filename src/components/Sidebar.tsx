@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTrigger } from './ui/sheet'
-import { t } from 'i18next'
+import i18next, { t } from 'i18next'
 import LanguageSwitcher from './LanguageSwitcher'
-import ThemeToggle from './ThemeToggle.astro'
 import Link from './Link.astro'
 
 const Sidebar = () => {
@@ -12,6 +11,8 @@ const Sidebar = () => {
   const closeSidebar = () => {
     setIsSidebarOpen(false);
   }
+
+  const lng = i18next.language === 'en' ? '' : `/${i18next.language}`;
 
   return (
     <Sheet
@@ -29,29 +30,29 @@ const Sidebar = () => {
           <nav className="flex-1 flex flex-col items-center justify-center gap-y-8 h-full">
             <ul className="flex flex-col text-lg uppercase justify-center items-center h-full gap-y-4 text-neutral-800 dark:text-neutral-300">
               <li className="transition-colors hover:text-primary-600 hover:dark:text-primary-400">
-                <Link href="/#about" onClick={closeSidebar}>
+                <a href={lng + "/#about"} onClick={closeSidebar}>
                   {t("About me")}
-                </Link>
+                </a>
               </li>
               <li className="transition-colors hover:text-primary-600 hover:dark:text-primary-400">
-                <Link href="/#experience" onClick={closeSidebar}>
+                <a href={lng + "/#experience"} onClick={closeSidebar}>
                   {t("Experience")}
-                </Link>
+                </a>
               </li>
               <li className="transition-colors hover:text-primary-600 hover:dark:text-primary-400">
-                <Link href="/#projects" onClick={closeSidebar}>
+                <a href={lng + "/#projects"} onClick={closeSidebar}>
                   {t("Projects")}
-                </Link>
+                </a>
               </li>
               <li className="transition-colors hover:text-primary-600 hover:dark:text-primary-400">
-                <Link href="/#services" onClick={closeSidebar}>
+                <a href={lng + "/#services"} onClick={closeSidebar}>
                   {t("Services")}
-                </Link>
+                </a>
               </li>
               <li className="transition-colors hover:text-primary-600 hover:dark:text-primary-400">
-                <Link href="/#contact" onClick={closeSidebar}>
+                <a href={lng + "/#contact"} onClick={closeSidebar}>
                   {t("Contact")}
-                </Link>
+                </a>
               </li>
             </ul>
             <div className="flex gap-x-4 items-center">
