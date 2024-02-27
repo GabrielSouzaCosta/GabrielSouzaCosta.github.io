@@ -7,7 +7,6 @@ import robotsTxt from "astro-robots-txt";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://gabriel-souza-costa.vercel.app',
   integrations: [tailwind(), react(), astroI18next(), robotsTxt()],
   output: 'hybrid',
   adapter: vercel()

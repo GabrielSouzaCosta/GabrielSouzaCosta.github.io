@@ -17,7 +17,7 @@
   border-radius: 0px;
 }
 
-*::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background-color: #6D936A;
   transition: colors 200ms;
 }
