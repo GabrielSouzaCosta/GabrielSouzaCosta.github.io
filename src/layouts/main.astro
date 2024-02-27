@@ -7,6 +7,17 @@ import Footer from './footer.astro';
 import i18next from 'i18next';
 
 const { content } = Astro.props;
+
+const languageCookie = Astro.cookies.get('language')?.value;
+
+if (languageCookie) {
+  i18next.changeLanguage(languageCookie);
+} else {
+  const langs = Astro.request.headers.get('accept-language')?.split(',') ?? [];
+  if (langs?.includes('pt') || langs?.includes('pt-BR')) {
+    i18next.changeLanguage('pt-BR');
+  }
+}
 ---
 
 <html 
@@ -30,10 +41,14 @@ const { content } = Astro.props;
     <meta name="theme-color" content="#ffffff">
 	</head>
 	<body class="bg-neutral-100 dark:bg-neutral-900 transition-colors duration-700 caret-primary overflow-x-hidden flex flex-col min-h-screen">
-		<Navbar />
-    <div class="flex-1">
-      <slot />
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <Navbar />
+        <div class="flex-1">
+          <slot />
+        </div>
+        <Footer />
+      </div>
     </div>
-    <Footer />
 	</body>
 </html>

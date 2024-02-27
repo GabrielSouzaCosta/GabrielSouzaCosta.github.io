@@ -15,7 +15,7 @@ import Link from "@/components/Link.astro";
       class="flex gap-x-4 items-center text-neutral-700 dark:text-neutral-300"
     >
       <p class="text-4xl font-logo">
-        GSC
+        G<span>SC</span>
       </p>
       <div>
         <p>
@@ -68,6 +68,29 @@ import Link from "@/components/Link.astro";
       </div>
     </nav>
 
-
   </div>
 </header>
+
+<script>
+  import gsap from 'gsap';
+	import { TextPlugin } from 'gsap/TextPlugin';
+
+	gsap.registerPlugin(
+		TextPlugin,
+	) 
+
+  let logoAnimation = gsap.to('.font-logo > span', {
+    text: 'abriel',
+    duration: 0.5,
+  }).pause();
+
+  document.querySelector('.font-logo')
+    ?.addEventListener('mouseenter', function() {
+      logoAnimation.play(0);
+    })
+
+  document.querySelector('.font-logo')
+    ?.addEventListener('mouseleave', function() {
+      logoAnimation.reverse();
+    })
+</script>

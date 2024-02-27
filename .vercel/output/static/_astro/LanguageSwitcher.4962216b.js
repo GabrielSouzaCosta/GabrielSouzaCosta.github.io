@@ -1,0 +1,1 @@
+import{L as e}from"./LanguageSwitcher.a26fc034.js";import"./utils.ad284e08.js";import"./index.b67cf0d3.js";import"./_commonjsHelpers.725317a4.js";import"./index.2b995fb0.js";import"./i18next.1d1c9b7d.js";export{e as default};

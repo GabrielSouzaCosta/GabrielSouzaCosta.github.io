@@ -3,8 +3,18 @@ import { Image } from 'astro:assets';
 import Main from '../layouts/main.astro';
 import i18next, { t } from 'i18next';
 import Link from '@/components/Link.astro';
+import { Button as MovingBorderButton } from '@/components/ui/moving-border';
 
-i18next.changeLanguage('en');
+const languageCookie = Astro.cookies.get('language')?.value;
+
+if (languageCookie) {
+  i18next.changeLanguage(languageCookie);
+} else {
+  const langs = Astro.request.headers.get('accept-language')?.split(',') ?? [];
+  if (langs?.includes('pt') || langs?.includes('pt-BR')) {
+    i18next.changeLanguage('pt-BR');
+  }
+}
 ---
 <Main
 	content={{
@@ -18,72 +28,75 @@ i18next.changeLanguage('en');
 		>
 			<div class="h-5/6 w-full flex flex-col xl:flex-row justify-start lg:justify-between gap-x-0 xl:gap-x-20 relative">
 				<div>
-					<p class="uppercase text-neutral-700 dark:text-neutral-300 mb-2">
-						{t("Hi, nice to meet you!")}
+					<p id="greeting" class="uppercase text-neutral-700 dark:text-neutral-300 mb-2 opacity-0">
+						Hi	
 					</p>
-					<div class="border-l-4 pl-4 border-neutral-900 dark:border-neutral-400 mb-4 2xl:mb-8">
+					<div id="title" class="border-l-0 pl-4 border-neutral-900 dark:border-neutral-400 mb-4 2xl:mb-6">
 						<h1
 							class="text-3xl xl:text-4xl 2xl:text-5xl font-medium leading-9 lg:leading-[3.25rem] text-neutral-900 dark:text-neutral-300"
 						>
-							<span>
-								{t("I'm")}<br>
-							</span>
-							<span class="text-primary">
-								Gabriel 
-							</span>
-							Souza Costa
-							<span class="block mt-2 text-2xl xl:text-3xl 2xl:text-4xl text-neutral-900 dark:text-neutral-300">
-								Web & Mobile
+							<span id="title-1">
 								<br>
-								Developer
+							</span>
+							<span id="title-2" class="text-primary">
+								
+							</span>
+							<span id="title-3">
+								
+							</span>
+							<span id="title-4" class="block mt-2 text-2xl xl:text-3xl 2xl:text-4xl text-neutral-900 dark:text-neutral-300"
+							>
+								
 							</span>
 						</h1>
 					</div>
 		
 					<div>
-						<p class="text-neutral-700 dark:text-neutral-300 text-xl mb-4 2xl:mb-6">
-							{t("Translating your dreams into reality, through code")}
-						</p>
-						<div class="flex gap-x-8 text-xl">
+						<div class="text-neutral-700 dark:text-neutral-50 text-md xl:text-xl mb-4 2xl:mb-6">
+							<p id="introduction" class="whitespace-pre-line mr-2 lg:mr-0">
+								
+							</p>
+						</div>
+						<div class="flex gap-x-6 text-xl">
 							<Link
 								href="#contact"
-								class="group text-primary-600 font-medium dark:text-primary hover:text-neutral-950 hover:dark:text-primary-400 transition-colors duration-200"
+								id="contact-link"
 							>
-								{t("Contact me")}
-								<hr class="group-hover:w-14 w-0 transition-all duration-300 border-neutral-950 dark:border-primary hover:dark:border-primary-400">
+								<MovingBorderButton
+									client:only
+									as="div"
+									duration={1500}
+									borderRadius='0px'
+									className='bg-primary/80 hover:bg-neutral-100 hover:drop-shadow border-2 dark:border border-primary dark:border-primary text-neutral-100 dark:text-primary hover:text-primary dark:bg-transparent hover:dark:bg-primary/80 hover:dark:text-neutral-300 transition-colors duration-300'
+									containerClassName='w-36 h-14'
+								>
+									{t("Contact me")}
+								</MovingBorderButton>
 							</Link>
 							<Link 
 								href="#projects"
-								class="group text-neutral-950 font-medium hover:text-primary-600 dark:text-neutral-100"
+								id="projects-link"
+								class="border border-neutral-700 hover:border-neutral-100 hover:bg-neutral-950 hover:dark:bg-neutral-300 dark:border-neutral-300 hover:dark:border-neutral-100 text-neutral-700 hover:text-neutral-100 dark:text-neutral-300 hover:dark:text-neutral-900 font-medium transition-colors duration-200 h-14 px-6 flex items-center justify-center"
 							>
-								{t("My Projects")}
-								<hr class="group-hover:w-5 w-0 transition-all duration-300 border-neutral-950 dark:border-neutral-100 hover:border-primary-600 hover:dark:border-neutral-100">
+								{t("My projects")}
 							</Link>
 						</div>
 					</div>
 				</div>
-				<div class="mt-8 xl:mt-24 2xl:mt-32 max-w-full overflow-hidden flex justify-end">
+				<div class="opacity-0 mt-8 xl:mt-24 2xl:mt-32 max-w-full overflow-hidden flex justify-end planet-image">
 					<img 
 						src="/images/planet.webp" 
 						alt={t("a floating planet and a typescript code on the left")}
 						width={687}
 						loading="eager"
 						height={525}
-						class="dark:hidden block w-11/12 lg:w-full object-contain"
-					/>
-					<img 
-						src="/images/planet-dark.webp" 
-						alt={t("a floating planet and a typescript code on the left")}
-						width={687}
-						loading="eager"
-						height={525}
-						class="hidden dark:block w-11/12 lg:w-full object-contain"
+						class="block w-11/12 lg:w-full object-contain"
 					/>
 				</div>
 
-				<div class="absolute top-0 right-0 w-40 h-40 border-t-4 border-r-4 border-neutral-900 dark:border-neutral-400"></div>
-				<div class="absolute bottom-0 right-0 w-12 h-12 border-r-4 border-b-4 border-neutral-900 dark:border-neutral-400"></div>
-				<div class="absolute bottom-0 left-0 w-40 h-40 border-l-4 border-b-4 border-neutral-900 dark:border-neutral-400 flex items-end p-2">
+				<div id="hero-top-right-border" class="absolute top-0 right-0 opacity-0 w-0 h-0 border-t-0 border-r-0 border-neutral-900 dark:border-neutral-400"></div>
+				<div id="hero-bottom-right-border" class="absolute bottom-0 right-0 w-0 h-0 border-neutral-900 dark:border-neutral-400"></div>
+				<div id="social-links" class="absolute bottom-0 left-0 w-40 h-0 opacity-0 border-l-4 border-b-4 border-neutral-900 dark:border-neutral-400 flex items-end p-2">
 					<div>
 						<p class="mb-2 text-sm lg:text-lg flex items-center gap-x-1 text-neutral-900 dark:text-neutral-300">
 							{t("Follow me")}! <i class="ph ph-smiley-wink text-2xl"></i>
@@ -148,22 +161,16 @@ i18next.changeLanguage('en');
 							{t("me")}
 						</span>
 					</h2>
-					<p class="text-neutral-700 dark:text-neutral-300 align-middle gap-x-1">
-						{t("Hello there! I'm Gabriel Souza Costa, a passionate")}
-						<strong class="uppercase text-primary-600 dark:text-primary-400"> Front End </strong>
-						{t("Developer with a love for creating appealing, accessible, and user-friendly web applications. My journey into programming began with Python, but I discovered my true passion in web development. I've been immersed in technology since childhood, exploring Flash games and the web, modding games, learning and interacting with different devices and softwares")}
+					<p id="about-me-paragraph" class="text-neutral-700 dark:text-neutral-300 align-middle gap-x-1">
+						
 					</p>
 
 					<hr class="flex-1 h-1 border-1 border-neutral-700 my-4">
 					<p class="text-2xl text-neutral-700 dark:text-neutral-300 mb-2">
 						{t("Hobbies & Interests")}
 					</p>
-					<p class="text-neutral-700 dark:text-neutral-300">
-						{t("I like to watch animes, some series and movies, I also like to go to gym where I relax my mind. I'm very interested in learning about")} 
-						<strong class="uppercase text-primary-600 dark:text-primary-400">
-							 design
-						</strong> 
-						{t("apart from programming.")}
+					<p id="about-me-paragraph-2" class="text-neutral-700 dark:text-neutral-300">
+						
 					</p>
 					<div class="grid grid-cols-2 gap-y-2 mt-4">
 						<div>
@@ -222,14 +229,14 @@ i18next.changeLanguage('en');
 					>
 						<i class="ph ph-arrow-down text-3xl"></i>
 						<p>
-							{t("Want to know about my")}
+							{t("Do you want to know about my")}
 							<br>
-							{t("work experience?")}
+							{t("professional experience?")}
 						</p>
 					</Link>
 				</div>
 
-				<img src="/images/profile-picture.webp" alt="Photo of myself" class="border p-1 border-neutral-800 dark:border-neutral-100 shadow-xl object-cover w-full lg:w-96 h-full aspect-[2/3]">
+				<img id="profile-pic" src="/images/profile-picture.webp" alt="Photo of myself" class="relative border p-1 border-neutral-800 dark:border-neutral-100 shadow-xl object-cover w-full lg:w-96 h-full aspect-[2/3]">
 			</div>
 		</section>
 
@@ -242,7 +249,8 @@ i18next.changeLanguage('en');
 				<br>
 				{t("Journey")}
 			</h3>
-			<div class="flex flex-col lg:flex-row">
+
+			<div class="flex flex-col lg:flex-row" id="experience-sections">
 				<div class="max-w-none lg:max-w-md w-full border-r-2 border-neutral-700 mb-4 lg:mb-0">
 					<p class="text-xl pb-1 border-b-2 mb-4 text-neutral-700 dark:text-neutral-100 border-neutral-700">
 						{t("Experience")}
@@ -250,10 +258,8 @@ i18next.changeLanguage('en');
 
 					<ul class="flex flex-col gap-y-4 pb-4 border-b-2 border-neutral-700">
 						<li class="border-b-2 pb-4 border-neutral-700">
-							<p class="text-3xl leading-8 mb-2 text-primary">
-								Front end
-								<br>
-								Developer
+							<p class="text-3xl leading-8 mb-2 text-primary whitespace-pre-line">
+								{t(`Front-end\nDeveloper`)}
 							</p>
 							<p class="text-xl text-neutral-700 dark:text-neutral-100">
 								Pátio Mobile
@@ -270,6 +276,9 @@ i18next.changeLanguage('en');
 							</p>
 							<hr class="w-4 border-neutral-700 dark:border-neutral-100 mb-1">
 							<ul class="mr-4 list-disc list-inside text-neutral-700 dark:text-neutral-300">
+								<li>
+									React
+								</li>
 								<li>
 									React Native
 								</li>
@@ -301,7 +310,7 @@ i18next.changeLanguage('en');
 							<hr class="w-4 border-neutral-700 dark:border-neutral-100 mb-1">
 							<ul class="mr-4 list-disc list-inside text-neutral-700 dark:text-neutral-300">
 								<li>
-									React JS | Next JS
+									Svelte | SvelteKit
 								</li>
 								<li>
 									HTML | CSS | Typescript
@@ -314,14 +323,15 @@ i18next.changeLanguage('en');
 						</li>
 					</ul>
 				</div>
+
 				<div class="flex-1 flex flex-col border-b-0 lg:border-b-2 border-neutral-700">
 					<p class="text-xl pb-1 pl-0 lg:pl-4 lg:border-b-2 lg:mb-4 text-neutral-700 dark:text-neutral-100 border-neutral-700">
 						{t("Skills")}
 					</p>
 					<hr class="block lg:hidden w-4 border-neutral-700 dark:border-neutral-100">
 
-					<ul class="w-full flex-1 pl-0 lg:pl-8 text-3xl lg:text-7xl grid grid-cols-3 justify-center place-content-center place-items-center gap-y-4 lg:gap-y-12">
-						<li class="text-neutral-700 dark:text-neutral-200 transition-colors duration-200 hover:text-primary hover:dark:text-primary-400">
+					<ul id="tech-list" class="w-full flex-1 pl-0 lg:pl-8 text-3xl lg:text-7xl grid grid-cols-3 justify-center place-content-center place-items-center gap-y-4 lg:gap-y-12">
+						<li class="opacity-0 text-neutral-700 dark:text-neutral-200 transition-colors duration-200 hover:text-primary hover:dark:text-primary-400">
 							<button 
 								type="button"
 								class="w-fit"
@@ -334,7 +344,7 @@ i18next.changeLanguage('en');
 								</div>
 							</button>
 						</li>
-						<li class="text-neutral-700 dark:text-neutral-200 transition-colors duration-200 hover:text-primary hover:dark:text-primary-400">
+						<li class="opacity-0 text-neutral-700 dark:text-neutral-200 transition-colors duration-200 hover:text-primary hover:dark:text-primary-400">
 							<button 
 								type="button"
 								class="w-fit"
@@ -347,7 +357,7 @@ i18next.changeLanguage('en');
 								</div>
 							</button>
 						</li>
-						<li class="text-neutral-700 dark:text-neutral-200 transition-colors duration-200 hover:text-primary hover:dark:text-primary-400">
+						<li class="opacity-0 text-neutral-700 dark:text-neutral-200 transition-colors duration-200 hover:text-primary hover:dark:text-primary-400">
 							<button 
 								type="button"
 								class="w-fit"
@@ -360,7 +370,7 @@ i18next.changeLanguage('en');
 								</div>
 							</button>
 						</li>
-						<li class="text-neutral-700 dark:text-neutral-200 transition-colors duration-200 hover:text-primary hover:dark:text-primary-400">
+						<li class="opacity-0 text-neutral-700 dark:text-neutral-200 transition-colors duration-200 hover:text-primary hover:dark:text-primary-400">
 							<button 
 								type="button"
 								class="w-fit"
@@ -375,7 +385,7 @@ i18next.changeLanguage('en');
 								</div>
 							</button>
 						</li>
-						<li class="text-neutral-700 dark:text-neutral-200 transition-colors duration-200 hover:text-primary hover:dark:text-primary-400">
+						<li class="opacity-0 text-neutral-700 dark:text-neutral-200 transition-colors duration-200 hover:text-primary hover:dark:text-primary-400">
 							<button 
 								type="button"
 								class="w-fit"
@@ -388,7 +398,7 @@ i18next.changeLanguage('en');
 								</div>
 							</button>
 						</li>
-						<li class="text-neutral-700 dark:text-neutral-200 transition-colors duration-200 hover:text-primary hover:dark:text-primary-400">
+						<li class="opacity-0 text-neutral-700 dark:text-neutral-200 transition-colors duration-200 hover:text-primary hover:dark:text-primary-400">
 							<button 
 								type="button"
 								class="w-fit"
@@ -401,7 +411,7 @@ i18next.changeLanguage('en');
 								</div>
 							</button>
 						</li>
-						<li class="text-neutral-700 dark:text-neutral-200 transition-colors duration-200 hover:text-primary hover:dark:text-primary-400">
+						<li class="opacity-0 text-neutral-700 dark:text-neutral-200 transition-colors duration-200 hover:text-primary hover:dark:text-primary-400">
 							<button 
 								type="button"
 								class="w-fit"
@@ -414,7 +424,7 @@ i18next.changeLanguage('en');
 								</div>
 							</button>
 						</li>
-						<li class="text-neutral-700 dark:text-neutral-200 transition-colors duration-200 hover:text-primary hover:dark:text-primary-400">
+						<li class="opacity-0 text-neutral-700 dark:text-neutral-200 transition-colors duration-200 hover:text-primary hover:dark:text-primary-400">
 							<button 
 								type="button"
 								class="w-fit"
@@ -427,7 +437,7 @@ i18next.changeLanguage('en');
 								</div>
 							</button>
 						</li>
-						<li class="text-neutral-700 dark:text-neutral-200 transition-colors duration-200 hover:text-primary hover:dark:text-primary-400">
+						<li class="opacity-0 text-neutral-700 dark:text-neutral-200 transition-colors duration-200 hover:text-primary hover:dark:text-primary-400">
 							<button 
 								type="button"
 								class="w-fit"
@@ -455,7 +465,7 @@ i18next.changeLanguage('en');
 				{t("Portfolio")}
 			</h4>
 
-			<ul class="flex flex-col gap-y-8 max-w-full overflow-hidden">
+			<ul id="projects-list" class="flex flex-col gap-y-8 max-w-full overflow-hidden">
 
 				<li class="flex flex-col lg:flex-row gap-4 pb-4 lg:pb-8 border-b-2 border-neutral-600">
 					<Image
@@ -479,7 +489,7 @@ i18next.changeLanguage('en');
 						<hr class="w-4 border-neutral-700 dark:border-neutral-100 mb-1">
 						<ul class="mr-4 list-disc list-inside text-neutral-700 dark:text-neutral-300">
 							<li>
-								React JS | Next JS
+								Svelte | SvelteKit
 							</li>
 							<li>
 								HTML | CSS | Typescript
@@ -678,6 +688,7 @@ i18next.changeLanguage('en');
 				</li>
 
 				<li class="flex flex-col lg:flex-row gap-4">
+
 					<Image
 						src="/images/usable.webp"
 						width={1920}
@@ -685,6 +696,7 @@ i18next.changeLanguage('en');
 						alt={t("Landing page of Usable website, showing the purpose of the website, that is to give tips on implementing accessibility on the web")}
 						class="max-w-full lg:max-w-2xl rounded shadow-xl object-cover"
 					/>
+
 					<div class="flex flex-col">
 						<p class="text-3xl font-semibold mb-2 text-neutral-950 dark:text-neutral-100">
 							Usable
@@ -741,16 +753,11 @@ i18next.changeLanguage('en');
 				{t("Services")}
 			</h5>
 			<div class="flex flex-col lg:flex-row gap-4">
-				<div class="w-full lg:w-1/2 p-0 lg:p-4 transition-shadow duration-300 lg:shadow-sm hover:lg:shadow-lg">
-					<Image
-						src="/images/web.webp" 
-						width={513}
-						height={243}
-						alt=""
-						class="aspect-[16/10] w-full object-cover rounded drop-shadow-xl"
-					/>
+
+				<div id="services-website" class="opacity-0 mt-[100px] w-full lg:w-1/2 p-0 lg:p-4 transition-shadow duration-300 lg:shadow-sm hover:lg:shadow-lg border border-neutral-700/25 dark:border-neutral-300/25">
+						<i class="-ml-4 ph-thin ph-desktop text-[10rem] text-center bg-gradient-to-br from-neutral-950 via-neutral-800 to-neutral-700 dark:from-neutral-100 dark:via-neutral-200 dark:to-neutral-300 inline-block text-transparent bg-clip-text"></i>
 					<div class="my-2">
-						<p class="text-xl lg:text-2xl mb-1 text-neutral-950 dark:text-neutral-100">
+						<p class="text-xl lg:text-xl mb-1 text-neutral-950 dark:text-neutral-100">
 							Websites
 						</p>
 						<p class="text-neutral-700 dark:text-neutral-300">
@@ -793,21 +800,13 @@ i18next.changeLanguage('en');
 							</strong>
 							{t("A professional website enhances your business's credibility and trustworthiness among potential customers.")}
 						</li>
-						<li>
-							{t("And more...")}
-						</li>
 					</ul>
 				</div>
-				<div class="w-full lg:w-1/2 p-0 lg:p-4 transition-shadow duration-300 lg:shadow-sm hover:lg:shadow-lg">
-					<Image
-						src="/images/mobile.webp" 
-						alt=""
-						width={495}
-						height={249}
-						class="aspect-[16/10] w-full object-cover rounded drop-shadow-xl"
-					/>
+
+				<div id="services-app" class="opacity-0 mt-[100px] w-full lg:w-1/2 p-0 lg:p-4 transition-shadow duration-300 lg:shadow-sm hover:lg:shadow-lg border border-neutral-700/25 dark:border-neutral-300/25">
+					<i class="-ml-8 ph-thin ph-device-mobile text-[10rem] text-center bg-gradient-to-br from-neutral-950 via-neutral-800 to-neutral-700 dark:from-neutral-100 dark:via-neutral-200 dark:to-neutral-300 inline-block text-transparent bg-clip-text"></i>
 					<div class="my-2">
-						<p class="text-xl lg:text-2xl mb-1 text-neutral-950 dark:text-neutral-100">
+						<p class="text-xl lg:text-xl mb-1 text-neutral-950 dark:text-neutral-100">
 							{t("Mobile Apps")}
 						</p>
 						<p class="text-neutral-700 dark:text-neutral-300">
@@ -849,9 +848,6 @@ i18next.changeLanguage('en');
 								{t("Faster Loading and Performance")}: 
 							</strong>
 							{t("Mobile apps, once downloaded, load faster than websites and provide quicker access to content and features, leading to higher user engagement.")}
-						</li>
-						<li>
-						{t("And more...")}
 						</li>
 					</ul>
 				</div>
@@ -945,6 +941,14 @@ i18next.changeLanguage('en');
 
 	</main>
 </Main>
+
+<style>
+	#projects-list li, #contact-link, #projects-link {
+		opacity: 0;
+	}
+</style>
+
+<script src="./animation.ts"></script>
 
 <script is:inline src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
 <script is:inline>
