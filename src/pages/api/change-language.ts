@@ -1,5 +1,4 @@
 import type { APIRoute } from "astro";
-export const prerender = true;
 
 export const POST: APIRoute = async ({ cookies, request, redirect }) => {
   const data = await request.formData();
