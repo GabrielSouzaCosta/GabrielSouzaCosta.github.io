@@ -8,6 +8,6 @@ import robotsTxt from "astro-robots-txt";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react(), astroI18next(), robotsTxt()],
-  output: 'hybrid',
+  output: 'server',
   adapter: vercel()
 });

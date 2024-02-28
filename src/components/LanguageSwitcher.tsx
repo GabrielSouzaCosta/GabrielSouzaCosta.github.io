@@ -21,7 +21,7 @@ const LanguageSwitcher = () => {
   }
 
   return (
-    <form id='form-lng' action="/api/change-language" method='post'>
+    <form id='form-lng'>
       <Select
         value={i18next.language}
         onValueChange={handleChangeLanguage}
