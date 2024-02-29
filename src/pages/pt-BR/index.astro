@@ -953,38 +953,9 @@ changeLanguage("pt-BR");
 		TextPlugin,
 	) 
 
-	const selectedLanguage = window.localStorage.getItem('language');
-	const langs = navigator.languages;
-	if (langs.includes('pt-BR') && !selectedLanguage) {
-		i18next.init({
-			lng: 'pt-BR'
-		})
-		.then(() => {
-
-		})
-	} else if (selectedLanguage) {
-		i18next.init({
-			lng: selectedLanguage
-		})
-		.then(() => {
-			animate();
-			validator.setCurrentLocale(selectedLanguage);
-		})
-	}
-
-	i18next.on('languageChanged', async function(lng) {
-		const localLng = window.localStorage.getItem('language');
-		if (lng && lng !== localLng) {
-			const formData = new FormData();
-			formData.set('language', lng);
-			const res = await fetch('/api/change-language', {
-				body: formData,
-				method: 'POST'
-			})
-			// animate();
-			// validator.setCurrentLocale(lng);
-		}
-	});	
+	await i18next.init().then(() => {
+		animate();
+	})
 
   function animate () {
 		if (!isAnimating) {

@@ -5,6 +5,15 @@ import i18next, { t, changeLanguage } from "i18next";
 import Link from "@/components/Link.astro";
 import { Button as MovingBorderButton } from "@/components/ui/moving-border";
 
+const languages = Astro.request.headers.get("accept-language");
+const visited = Astro.cookies.get('visited');
+if (languages?.includes('pt-BR') && !Boolean(visited)) {
+	Astro.cookies.set('visited', 'true', {
+		maxAge: 60 * 60 * 2 // 2 hours
+	})
+	return Astro.redirect('/pt-BR');
+}
+
 changeLanguage("en");
 ---
 <Main
