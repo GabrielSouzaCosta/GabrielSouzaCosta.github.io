@@ -1,29 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import i18next from 'i18next';
 
 const LanguageSwitcher = () => {
 
-  const handleChangeLanguage = async (lng: 'en' | 'pt-BR') => {
-    // if (lng === 'en') {
-    //   location.href = '/';
-    // } else {
-    //   location.href = '/'+lng;
-    // }
-    const formData = new FormData();
-    formData.set('language', lng);
-    const res = await fetch('/api/change-language', {
-      body: formData,
-      method: 'POST'
-    }).then(r => r.json())
+  const [ value, setValue ] = useState(i18next.language)
 
-    window.location.reload();
+  const handleChangeLanguage = async (lng: 'en' | 'pt-BR') => {
+    i18next.changeLanguage(lng);
+    window.localStorage.setItem('language', lng);
+    setValue(lng);
   }
 
   return (
     <form id='form-lng'>
       <Select
-        value={i18next.language}
+        value={value}
         onValueChange={handleChangeLanguage}
         name='language'
       >

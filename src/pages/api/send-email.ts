@@ -1,6 +1,9 @@
 import { Resend } from 'resend';
 import type { APIRoute } from "astro";
 
+export const prerender = false
+
+
 const resend = new Resend('re_EAkhogF8_HAKYNbNaJ8ohxc8jqZXFCpEV');
 
 export const POST: APIRoute = async ({ request }) => {
@@ -28,6 +31,13 @@ export const POST: APIRoute = async ({ request }) => {
         </div>
       `
     });
+    return new Response(
+      JSON.stringify({
+        message: "Success",
+        success: true
+      }),
+      { status: 200 }
+    );
   }
 
   return new Response(

@@ -1,11 +1,11 @@
 ---
 import { Image } from "astro:assets";
-import Main from "../layouts/main.astro";
+import Main from "../../layouts/main.astro";
 import i18next, { t, changeLanguage } from "i18next";
 import Link from "@/components/Link.astro";
 import { Button as MovingBorderButton } from "@/components/ui/moving-border";
 
-changeLanguage("en");
+changeLanguage("pt-BR");
 ---
 <Main
 	content={{
@@ -953,9 +953,38 @@ changeLanguage("en");
 		TextPlugin,
 	) 
 
-	await i18next.init().then(() => {
-		animate();
-	})
+	const selectedLanguage = window.localStorage.getItem('language');
+	const langs = navigator.languages;
+	if (langs.includes('pt-BR') && !selectedLanguage) {
+		i18next.init({
+			lng: 'pt-BR'
+		})
+		.then(() => {
+
+		})
+	} else if (selectedLanguage) {
+		i18next.init({
+			lng: selectedLanguage
+		})
+		.then(() => {
+			animate();
+			validator.setCurrentLocale(selectedLanguage);
+		})
+	}
+
+	i18next.on('languageChanged', async function(lng) {
+		const localLng = window.localStorage.getItem('language');
+		if (lng && lng !== localLng) {
+			const formData = new FormData();
+			formData.set('language', lng);
+			const res = await fetch('/api/change-language', {
+				body: formData,
+				method: 'POST'
+			})
+			// animate();
+			// validator.setCurrentLocale(lng);
+		}
+	});	
 
   function animate () {
 		if (!isAnimating) {

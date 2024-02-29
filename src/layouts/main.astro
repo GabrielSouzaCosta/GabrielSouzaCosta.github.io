@@ -7,17 +7,6 @@ import Footer from './footer.astro';
 import i18next from 'i18next';
 
 const { content } = Astro.props;
-
-const languageCookie = Astro.cookies.get('language')?.value;
-
-if (languageCookie) {
-  i18next.changeLanguage(languageCookie);
-} else {
-  const langs = Astro.request.headers.get('accept-language')?.split(',') ?? [];
-  if (langs?.includes('pt') || langs?.includes('pt-BR')) {
-    i18next.changeLanguage('pt-BR');
-  }
-}
 ---
 
 <html 

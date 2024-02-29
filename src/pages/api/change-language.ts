@@ -1,12 +1,13 @@
 import type { APIRoute } from "astro";
+import i18next from "i18next";
+
+export const prerender = false
 
 export const POST: APIRoute = async ({ cookies, request, redirect }) => {
   const data = await request.formData();
   const language = data.get("language");
   if (language) {
-    cookies.set('language', language, {
-      path: '/',
-    });
+    i18next.changeLanguage(language as string);
   }
 
   const response = new Response(
