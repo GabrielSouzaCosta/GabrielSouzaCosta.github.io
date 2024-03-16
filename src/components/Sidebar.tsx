@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTrigger } from './ui/sheet'
+import { useState } from 'react'
+import { Sheet, SheetContent, SheetDescription, SheetTrigger } from './ui/sheet'
 import i18next, { t } from 'i18next'
-import LanguageSwitcher from './LanguageSwitcher'
-import Link from './Link.astro'
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Sidebar = () => {
 
@@ -55,12 +54,7 @@ const Sidebar = () => {
                 </a>
               </li>
             </ul>
-            <div className="flex gap-x-4 items-center">
-              <LanguageSwitcher />
-              {/* <div>
-                <ThemeToggle />
-              </div> */}
-            </div>
+            <LanguageSwitcher />
           </nav>
         </SheetDescription>
       </SheetContent>

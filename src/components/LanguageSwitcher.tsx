@@ -7,9 +7,7 @@ const LanguageSwitcher = () => {
   const [ value, setValue ] = useState(i18next.language)
 
   const handleChangeLanguage = async (lng: 'en' | 'pt-BR') => {
-    i18next.changeLanguage(lng);
-    window.localStorage.setItem('language', lng);
-    setValue(lng);
+    window.location.href = lng === 'en' ? '/' : `/${lng}`;
   }
 
   return (

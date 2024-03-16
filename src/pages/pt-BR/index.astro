@@ -6,6 +6,18 @@ import Link from "@/components/Link.astro";
 import { Button as MovingBorderButton } from "@/components/ui/moving-border";
 
 changeLanguage("pt-BR");
+
+const languages = Astro.request.headers.get("accept-language");
+const visited = Astro.cookies.get("visited");
+if (languages?.includes("pt-BR") && !Boolean(visited)) {
+    Astro.cookies.set("visited", "true", {
+        maxAge: 60 * 60 * 2,
+        path: "/",
+        httpOnly: false,
+    });
+    console.log(languages);
+    return Astro.redirect("/pt-BR");
+}
 ---
 <Main
 	content={{
@@ -24,10 +36,10 @@ changeLanguage("pt-BR");
 					</p>
 					<div id="title" class="border-l-0 pl-4 border-neutral-900 dark:border-neutral-400 mb-4 2xl:mb-6">
 						<h1
-							class="text-3xl xl:text-4xl 2xl:text-5xl font-medium leading-9 lg:leading-[3.25rem] text-neutral-900 dark:text-neutral-300"
+							class="text-3xl 2xl:text-5xl font-medium leading-9 lg:leading-[2rem] xl:leading-[2rem] text-neutral-900 dark:text-neutral-300"
 						>
 							<span id="title-1">
-								<br>
+								
 							</span>
 							<span id="title-2" class="text-primary">
 								
@@ -946,326 +958,341 @@ changeLanguage("pt-BR");
 	import { TextPlugin } from 'gsap/dist/TextPlugin';
 	import i18next from 'i18next';
 
-	let isAnimating = false;
-
-	gsap.registerPlugin(
-		ScrollTrigger,
-		TextPlugin,
-	) 
-
-	await i18next.init().then(() => {
-		animate();
-	})
-
-  function animate () {
-		if (!isAnimating) {
-			isAnimating = true;	
-			const heroTimeline = gsap.timeline();
+	document.addEventListener('DOMContentLoaded', async function() {
+		let isAnimating = false;
 	
-			heroTimeline.to('#greeting', {
-				text: {
-					value: i18next.t('Hi, nice to meet you!'),
-					delimiter: ' '
-				},
-				duration: 0.5,
-				ease: 'none',
-				opacity: 1
-			})
-			.fromTo(
-				'#title', 
-				{
-					opacity: 0
-				},
-				{
-					borderLeftWidth: 4,
-					duration: 0.2,
-					opacity: 1
-				}
-			)
-			.to('#title-1', 
-				{
-					text: i18next.t("I'm"),
-					duration: 0.1,
-					ease: 'none',
-					opacity: 1,
-				}
-			)
-			.to('#title-2', 
-				{
-					text: "Gabriel<br>",
-					duration: 0.2,
-					ease: 'none',
-			})
-			.to('#title-3', 
-				{
-					text: "Souza Costa",
+		gsap.registerPlugin(
+			ScrollTrigger,
+			TextPlugin,
+		) 
+
+		let lng = window.location.href.includes('pt-BR') ? 'pt-BR' : 'en';
+		
+		await i18next.init({
+			lng,
+			fallbackLng: lng,
+		}).then(() => {
+			setTimeout(() => {
+				animate();
+			}, 100)
+		})
+
+		console.log(i18next);
+
+		function animate () {
+			if (!isAnimating) {
+				isAnimating = true;	
+				const heroTimeline = gsap.timeline();
+		
+				heroTimeline.to('#greeting', {
+					text: {
+						value: i18next.t('Hi, nice to meet you!'),
+						delimiter: ' '
+					},
 					duration: 0.5,
 					ease: 'none',
-				}, 
-				1
-			)
-			// .to('#title-4', {
-			// 	text: 'Web & Mobile<br>Developer',
-			// 	duration: 0.7,
-			// 	ease: 'none',
-			// })
-			.to('#introduction', {
-				text: i18next.t('My goal is to create the best digital experiences \nthat are easy on the eyes and pleasant to use.'),
-				duration: 1.2,
-				ease: 'none',
-			}, 1)
-			.to('.planet-image', {
-				opacity: 1,
-			}, 1)
-			.to('.planet-image', {
-				repeat: -1,
-				y: -1,
-				yoyo: true,
-			}, 1.1)
-			.to(
-				'#contact-link', 
-				{
-					duration: 0.05,
-					opacity: 1,
-					ease: 'power3',
-				},
-				1.6
-			)
-			.to('#hero-top-right-border', {
-				width: 160,
-				height: 160,
-				opacity: 1,
-				borderRightWidth: 4,
-				borderTopWidth: 4,
-			}, 1)
-			.to('#hero-bottom-right-border', {
-				width: 48,
-				height: 48,
-				opacity: 1,
-				borderRightWidth: 4,
-				borderBottomWidth: 4,
-			}, 1)
-			.fromTo(
-				'#projects-link', 
-				{
-					opacity: 0,
-				},
-				{
-					duration: 0.75,
-					opacity: 1,
+					opacity: 1
+				})
+				.fromTo(
+					'#title', 
+					{
+						opacity: 0
+					},
+					{
+						borderLeftWidth: 4,
+						duration: 0.2,
+						opacity: 1
+					}
+				)
+				.to('#title-1', 
+					{
+						text: i18next.t("I'm"),
+						duration: 0.1,
+						ease: 'none',
+						opacity: 1,
+					}
+				)
+				.to('#title-2', 
+					{
+						text: "Gabriel<br>",
+						duration: 0.2,
+						ease: 'none',
+				})
+				.to('#title-3', 
+					{
+						text: "Souza Costa",
+						duration: 0.5,
+						ease: 'none',
+					}, 
+					1
+				)
+				// .to('#title-4', {
+				// 	text: 'Web & Mobile<br>Developer',
+				// 	duration: 0.7,
+				// 	ease: 'none',
+				// })
+				.to('#introduction', {
+					text: i18next.t('My goal is to create the best digital experiences \nthat are easy on the eyes and pleasant to use.'),
+					duration: 1.2,
 					ease: 'none',
-				},
-				1.8
-			)
-			.to('#social-links', {
-				duration: 1,
-				opacity: 1,
-				height: 160,
-			}, 1)
-	
-			gsap.fromTo(
-				'#about-me-paragraph', 
-				{
-					// opacity: 0
-				},
-				{
-					scrollTrigger: '#about-me-paragraph',
-					text: `
-						${i18next.t("Hello there! I'm a developer")}
-						<strong class="uppercase text-primary-600 dark:text-primary-400"> Front End </strong>
-						${i18next.t("who is always looking for creating appealing, accessible, and user-friendly web applications. I've been immersed in technology since childhood, exploring Flash games and the web, modding games, learning and interacting with different devices and softwares.")}
-					`,
-					duration: 2,
-					ease: 'none',
-					// opacity: 1
-				}, 
-			)
-	
-			gsap.fromTo(
-				'#about-me-paragraph-2', 
-				{
-					// opacity: 0
-				},
-				{
-					scrollTrigger: '#about-me-paragraph',
-					text: `
-						${i18next.t("I like watching anime, some series and films, going to the gym or practicing Muay Thai. I am very interested in learning about")}
-						<strong class="uppercase text-primary-600 dark:text-primary-400">
-								design
-						</strong> 
-						${i18next.t("apart from programming.")}
-					`,
-					duration: 1.5,
-					delay: 2,
-					ease: 'none',
-					// opacity: 1
-				}, 
-			)
-	
-			gsap.fromTo(
-				"#profile-pic", 
-				{
-					opacity: 0,
-					marginTop: -120,
-				},
-				{
-					scrollTrigger: '#profile-pic',
+				}, 1)
+				.to('.planet-image', {
 					opacity: 1,
-					marginTop: 0,
-					duration: 0.8,
-					delay: 1.5,
-				},
-			);
-	
-			gsap.fromTo(
-				"#experience-sections", 
-				{
-					opacity: 0,
-				},
-				{
+				}, 1)
+				.to('.planet-image', {
+					repeat: -1,
+					y: -1,
+					yoyo: true,
+				}, 1.1)
+				.to(
+					'#contact-link', 
+					{
+						duration: 0.05,
+						opacity: 1,
+						ease: 'power3',
+					},
+					1.6
+				)
+				.to('#hero-top-right-border', {
+					width: 160,
+					height: 160,
+					opacity: 1,
+					borderRightWidth: 4,
+					borderTopWidth: 4,
+				}, 1)
+				.to('#hero-bottom-right-border', {
+					width: 48,
+					height: 48,
+					opacity: 1,
+					borderRightWidth: 4,
+					borderBottomWidth: 4,
+				}, 1)
+				.fromTo(
+					'#projects-link', 
+					{
+						opacity: 0,
+					},
+					{
+						duration: 0.75,
+						opacity: 1,
+						ease: 'none',
+					},
+					1.8
+				)
+				.to('#social-links', {
+					duration: 1,
+					opacity: 1,
+					height: 160,
+				}, 1)
+		
+				gsap.fromTo(
+					'#about-me-paragraph', 
+					{
+						// opacity: 0
+					},
+					{
+						scrollTrigger: '#about-me-paragraph',
+						text: `
+							${i18next.t("Hello there! I'm a developer")}
+							<strong class="uppercase text-primary-600 dark:text-primary-400"> Front End </strong>
+							${i18next.t("who is always looking for creating appealing, accessible, and user-friendly web applications. I've been immersed in technology since childhood, exploring Flash games and the web, modding games, learning and interacting with different devices and softwares.")}
+						`,
+						duration: 2,
+						ease: 'none',
+						// opacity: 1
+					}, 
+				)
+		
+				gsap.fromTo(
+					'#about-me-paragraph-2', 
+					{
+						// opacity: 0
+					},
+					{
+						scrollTrigger: '#about-me-paragraph',
+						text: `
+							${i18next.t("I like watching anime, some series and films, going to the gym or practicing Muay Thai. I am very interested in learning about")}
+							<strong class="uppercase text-primary-600 dark:text-primary-400">
+									design
+							</strong> 
+							${i18next.t("apart from programming.")}
+						`,
+						duration: 1.5,
+						delay: 2,
+						ease: 'none',
+						// opacity: 1
+					}, 
+				)
+		
+				gsap.fromTo(
+					"#profile-pic", 
+					{
+						opacity: 0,
+						marginTop: -120,
+					},
+					{
+						scrollTrigger: '#profile-pic',
+						opacity: 1,
+						marginTop: 0,
+						duration: 0.8,
+						delay: 1.5,
+					},
+				);
+		
+				gsap.fromTo(
+					"#experience-sections", 
+					{
+						opacity: 0,
+					},
+					{
+						scrollTrigger: '#experience-sections',
+						opacity: 1,
+						duration: 2,
+						delay: 0.5,
+					},
+				)
+		
+				gsap.to("#tech-list li", {
 					scrollTrigger: '#experience-sections',
 					opacity: 1,
-					duration: 2,
-					delay: 0.5,
-				},
-			)
-	
-			gsap.to("#tech-list li", {
-				scrollTrigger: '#experience-sections',
-				opacity: 1,
-				duration: 1,
-				delay: 1,
-				stagger: {
-					from: 'start',
-					amount: 1
-				}
-			});
-	
-			let projects = gsap.utils.toArray('#projects-list li')
-	
-			projects.forEach(project => {
-				gsap.to(project, {
-					scrollTrigger: project,
-					opacity: 1,
 					duration: 1,
-					delay: 0.5,
+					delay: 1,
+					stagger: {
+						from: 'start',
+						amount: 1
+					}
 				});
-			})
-	
-			gsap.to("#services-website", {
-				scrollTrigger: '#services > div',
-				opacity: 1,
-				marginTop: 0,
-				duration: 0.6,
-				delay: 0.3,
-			}); 
-	
-			gsap.to("#services-app", {
-				scrollTrigger: '#services > div',
-				opacity: 1,
-				marginTop: 0,
-				duration: 0.6,
-				delay: 0.5,
-			});
-	
-			gsap.fromTo(
-				"#contact", 
-				{
-					opacity: 0,
-					marginTop: 100,
-				},
-				{
-					scrollTrigger: '#contact',
+		
+				let projects = gsap.utils.toArray('#projects-list li')
+		
+				projects.forEach(project => {
+					gsap.to(project, {
+						scrollTrigger: project,
+						opacity: 1,
+						duration: 1,
+						delay: 0.5,
+					});
+				})
+		
+				gsap.to("#services-website", {
+					scrollTrigger: '#services > div',
 					opacity: 1,
 					marginTop: 0,
-					duration: 0.5,
+					duration: 0.6,
 					delay: 0.3,
-				},
-			);
+				}); 
+		
+				gsap.to("#services-app", {
+					scrollTrigger: '#services > div',
+					opacity: 1,
+					marginTop: 0,
+					duration: 0.6,
+					delay: 0.5,
+				});
+		
+				gsap.fromTo(
+					"#contact", 
+					{
+						opacity: 0,
+						marginTop: 100,
+					},
+					{
+						scrollTrigger: '#contact',
+						opacity: 1,
+						marginTop: 0,
+						duration: 0.5,
+						delay: 0.3,
+					},
+				);
 
-			setTimeout(() => {
-				isAnimating = false;
-			}, 1000)
-		}
-  }
-
-	const validator = new window.JustValidate('#contact-form', {
-		focusInvalidField: true,
-		errorFieldCssClass: 'border-red-600',
-		validateBeforeSubmitting: true,
-	}, [
-		{
-			key: "Please enter your name",
-			dict: {
-				"pt-BR": "Por favor, insira seu nome",
-			}
-		},
-		{
-			key: "Please enter your email",
-			dict: {
-				"pt-BR": "Por favor, insira seu email",
-			}
-		},
-		{
-			key: "Please enter a valid email",
-			dict: {
-				"pt-BR": "Por favor, insira um email válido",
-			}
-		},
-		{
-			key: "Please enter your message",
-			dict: {
-				"pt-BR": "Por favor, insira seu nome",
+				setTimeout(() => {
+					isAnimating = false;
+				}, 1000)
 			}
 		}
-	]);
 
-	validator
-		.addField('#name', [
-				{
-					rule: 'required',
-					errorMessage: 'Please enter your name'
+		const validator = new window.JustValidate('#contact-form', {
+			focusInvalidField: true,
+			errorFieldCssClass: 'border-red-600',
+			validateBeforeSubmitting: true,
+		}, [
+			{
+				key: "Please enter your name",
+				dict: {
+					"pt-BR": "Por favor, insira seu nome",
 				}
-			]
-		)
-		.addField('#email', [
-				{
-					rule: 'required',
-					errorMessage: 'Please enter your email'
-				},
-				{
-					rule: 'email',
-					errorMessage: 'Please enter a valid email'
-				},
-			]
-		)
-		.addField('#message', [
-				{
-					rule: 'required',
-					errorMessage: 'Please enter your message'
+			},
+			{
+				key: "Please enter your email",
+				dict: {
+					"pt-BR": "Por favor, insira seu email",
 				}
-			]
-		)
+			},
+			{
+				key: "Please enter a valid email",
+				dict: {
+					"pt-BR": "Por favor, insira um email válido",
+				}
+			},
+			{
+				key: "Please enter your message",
+				dict: {
+					"pt-BR": "Por favor, insira seu nome",
+				}
+			}
+		]);
 
-	validator.onSuccess(async (e) => {
-		const loading = document.getElementById('loading');
-		loading.classList.remove('hidden');
-		loading.classList.add('flex');
-
-		const button = document.getElementById('send-message');
-		button.classList.remove('flex');
-		button.classList.add('hidden');
-
-		const formData = new FormData(e.target);
-
-		const response = await fetch("/api/send-email", {
-			method: "POST",
-			body: formData,
-		});
-		const data = await response.json();
-		const { success } = data;
-		if (success) {
-			window.location.href = '/email-sent'
+		if (i18next.language !== 'en') {
+			validator.setCurrentLocale(i18next.language);
 		}
+
+		validator
+			.addField('#name', [
+					{
+						rule: 'required',
+						errorMessage: 'Please enter your name'
+					}
+				]
+			)
+			.addField('#email', [
+					{
+						rule: 'required',
+						errorMessage: 'Please enter your email'
+					},
+					{
+						rule: 'email',
+						errorMessage: 'Please enter a valid email'
+					},
+				]
+			)
+			.addField('#message', [
+					{
+						rule: 'required',
+						errorMessage: 'Please enter your message'
+					}
+				]
+			)
+
+		validator.onSuccess(async (e) => {
+			const loading = document.getElementById('loading');
+			loading.classList.remove('hidden');
+			loading.classList.add('flex');
+
+			const button = document.getElementById('send-message');
+			button.classList.remove('flex');
+			button.classList.add('hidden');
+
+			const formData = new FormData(e.target);
+
+			const response = await fetch("/api/send-email", {
+				method: "POST",
+				body: formData,
+			});
+			const data = await response.json();
+			const { success } = data;
+			if (success) {
+				window.location.href = '/email-sent'
+			}
+		})
 	})
 </script>

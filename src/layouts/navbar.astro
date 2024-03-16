@@ -58,10 +58,10 @@ import { LanguageSelector } from "astro-i18next/components";
       </ul>
       <div class="flex gap-x-4 items-center">
         <div class="hidden lg:flex gap-x-2">
-          <!-- <LanguageSwitcher 
+          <LanguageSwitcher 
             client:only="react"
-          /> -->
-          <div class="relative text-neutral-700 dark:text-neutral-300">
+          />
+          <!-- <div class="relative text-neutral-700 dark:text-neutral-300">
             <i class='absolute top-1/2 transform -translate-y-1/2 left-0 ph ph-translate text-2xl'></i>
             <LanguageSelector
               languageMapping={{ en: "EN", "pt-BR": "PT-BR" }}
@@ -69,14 +69,14 @@ import { LanguageSelector } from "astro-i18next/components";
               class="appearance-none bg-transparent border-0 font-medium flex h-10 w-full items-center gap-x-2 rounded-md py-1 pl-8 pr-5 text-sm ring-offset-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:ring-offset-neutral-950 dark:placeholder:text-neutral-400 dark:focus:ring-neutral-300"
             />
             <i class='absolute top-1/2 transform -translate-y-1/2 right-0 ph ph-caret-down text-md dark:text-neutral-300 text-neutral-600'></i>
-          </div>
+          </div> -->
         </div>
         <div>
           <ThemeToggle />
         </div>
       </div>
       <div class="flex lg:hidden">
-        <Sidebar client:load/>
+        <Sidebar client:load />
       </div>
     </nav>
 
@@ -91,6 +91,7 @@ import { LanguageSelector } from "astro-i18next/components";
 </style>
 
 <script>
+
   import gsap from 'gsap';
 	import { TextPlugin } from 'gsap/TextPlugin';
 
