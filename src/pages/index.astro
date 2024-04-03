@@ -31,33 +31,32 @@ if (languages?.includes("pt-BR") && !Boolean(visited)) {
 		>
 			<div class="h-5/6 w-full flex flex-col xl:flex-row justify-start lg:justify-between gap-x-0 xl:gap-x-20 relative">
 				<div>
-					<p id="greeting" class="uppercase text-neutral-700 dark:text-neutral-300 mb-2 opacity-0">
-						Hi	
+					<p id="greeting" class="uppercase text-neutral-700 dark:text-neutral-300 mb-2">
+						{t("Hi, nice to meet you!")}
 					</p>
 					<div id="title" class="border-l-0 pl-4 border-neutral-900 dark:border-neutral-400 mb-4 2xl:mb-6">
 						<h1
 							class="text-3xl 2xl:text-5xl font-medium leading-9 lg:leading-[2rem] xl:leading-[2rem] text-neutral-900 dark:text-neutral-300"
 						>
 							<span id="title-1">
-								
+								{t("I'm")}
 							</span>
 							<span id="title-2" class="text-primary">
-								
+								Gabriel<br>
 							</span>
 							<span id="title-3">
-								
-							</span>
-							<span id="title-4" class="block mt-2 text-2xl xl:text-3xl 2xl:text-4xl text-neutral-900 dark:text-neutral-300"
-							>
-								
+								Souza Costa
 							</span>
 						</h1>
 					</div>
 		
 					<div>
 						<div class="text-neutral-700 dark:text-neutral-50 text-md xl:text-xl mb-4 2xl:mb-6">
-							<p id="introduction" class="whitespace-pre-line mr-2 lg:mr-0">
-								
+							<p id="introduction" class="whitespace-nowrap mr-2 lg:mr-0">
+								{t("My goal is to create the best digital experiences")}
+							</p>
+							<p id="introduction-2">
+								{t("that are easy on the eyes and pleasant to use.")}
 							</p>
 						</div>
 						<div class="flex gap-x-6 text-xl">
@@ -165,7 +164,9 @@ if (languages?.includes("pt-BR") && !Boolean(visited)) {
 						</span>
 					</h2>
 					<p id="about-me-paragraph" class="text-neutral-700 dark:text-neutral-300 align-middle gap-x-1">
-						
+						{t("Hello there! I'm a developer")}
+						<strong class="uppercase text-primary-600 dark:text-primary-400"> Front End </strong>
+						{t("who is always looking for creating appealing, accessible, and user-friendly web applications. I've been immersed in technology since childhood, exploring Flash games and the web, modding games, learning and interacting with different devices and softwares.")}
 					</p>
 
 					<hr class="flex-1 h-1 border-1 border-neutral-700 my-4">
@@ -173,7 +174,11 @@ if (languages?.includes("pt-BR") && !Boolean(visited)) {
 						{t("Hobbies & Interests")}
 					</p>
 					<p id="about-me-paragraph-2" class="text-neutral-700 dark:text-neutral-300">
-						
+						{t("I like watching anime, some series and films, going to the gym or practicing Muay Thai. I am very interested in learning about")}
+						<strong class="uppercase text-primary-600 dark:text-primary-400">
+							design
+						</strong> 
+						{t("apart from programming.")}
 					</p>
 					<div class="grid grid-cols-2 gap-y-2 mt-4">
 						<div>
@@ -472,6 +477,62 @@ if (languages?.includes("pt-BR") && !Boolean(visited)) {
 
 				<li class="flex flex-col lg:flex-row gap-4 pb-4 lg:pb-8 border-b-2 border-neutral-600">
 					<Image
+						src="/images/charmaker.webp" 
+						width={1920}
+						height={971}
+						alt={t("Landing page of Characterverse, a character sheet")}
+						sizes='(max-width: 768px) 60vw, 100vw'
+						class="max-w-full lg:max-w-2xl rounded shadow-xl object-cover"
+					/>
+					<div class="flex flex-col">
+						<p class="text-3xl font-semibold mb-2 text-neutral-950 dark:text-neutral-100">
+							Charmaker
+						</p>
+						<p class="text-neutral-700 dark:text-neutral-300">
+							{t("Pixel Art Character Creator, you can create and download your characters images, full body and avatar.")}
+						</p>
+						<p class="uppercase text-primary-600 dark:text-primary text-lg mt-2 mb-1">
+							{t("Skills")}
+						</p>
+						<hr class="w-4 border-neutral-700 dark:border-neutral-100 mb-1">
+						<ul class="mr-4 list-disc list-inside text-neutral-700 dark:text-neutral-300">
+							<li>
+								Svelte | SvelteKit | React Native
+							</li>
+							<li>
+								HTML | CSS | Typescript
+							</li>
+							<li>
+								PostgreSQL
+							</li>
+						</ul>
+						<div class="flex-1 flex items-end gap-x-4 text-lg 2xl:text-xl mt-4 lg:mt-0">
+							<a 
+								href="https://charmaker.app/"
+								target="_blank"
+								class="flex items-center gap-x-2 text-primary transition-colors duration-200 hover:text-primary-400"
+							>	
+								<i class="ph ph-arrow-square-out text-3xl"></i>
+								<p>
+									{t("See online")}
+								</p>
+							</a>
+							<a 
+								href="https://play.google.com/store/apps/details?id=gabrielsc25.charmaker&hl=pt_BR&gl=US"
+								target="_blank"
+								class="flex items-center gap-x-2 text-neutral-950 dark:text-neutral-300 transition-colors duration-200 hover:text-neutral-600 hover:dark:text-neutral-50"
+							>	
+								<i class="ph ph-google-play-logo text-3xl"></i>
+								<p>
+									{t("Get on Play Store")}
+								</p>
+							</a>
+						</div>
+					</div>
+				</li>
+
+				<li class="flex flex-col lg:flex-row-reverse gap-4 pb-4 lg:pb-8 border-b-2 border-neutral-600">
+					<Image
 						src="/images/characterverse.webp" 
 						width={1920}
 						height={971}
@@ -492,7 +553,7 @@ if (languages?.includes("pt-BR") && !Boolean(visited)) {
 						<hr class="w-4 border-neutral-700 dark:border-neutral-100 mb-1">
 						<ul class="mr-4 list-disc list-inside text-neutral-700 dark:text-neutral-300">
 							<li>
-								Svelte | SvelteKit
+								Svelte | SvelteKit | React Native
 							</li>
 							<li>
 								HTML | CSS | Typescript
@@ -501,7 +562,7 @@ if (languages?.includes("pt-BR") && !Boolean(visited)) {
 								PostgreSQL
 							</li>
 						</ul>
-						<div class="flex-1 flex items-end text-2xl mt-4 lg:mt-0">
+						<div class="flex-1 flex items-end gap-x-4 text-lg 2xl:text-xl mt-4 lg:mt-0">
 							<a 
 								href="https://characterverse.app/"
 								target="_blank"
@@ -510,6 +571,16 @@ if (languages?.includes("pt-BR") && !Boolean(visited)) {
 								<i class="ph ph-arrow-square-out text-3xl"></i>
 								<p>
 									{t("See online")}
+								</p>
+							</a>
+							<a 
+								href="https://play.google.com/store/apps/details?id=com.gabrielsc25.characterverse&hl=pt&gl=US"
+								target="_blank"
+								class="flex items-center gap-x-2 text-neutral-950 dark:text-neutral-300 transition-colors duration-200 hover:text-neutral-600 hover:dark:text-neutral-50"
+							>	
+								<i class="ph ph-google-play-logo text-3xl"></i>
+								<p>
+									{t("Get on Play Store")}
 								</p>
 							</a>
 						</div>
@@ -547,7 +618,7 @@ if (languages?.includes("pt-BR") && !Boolean(visited)) {
 							</li>
 						</ul>
 
-						<div class="flex-1 flex items-end text-2xl gap-x-4 mt-4 lg:mt-0">
+						<div class="flex-1 flex items-end text-lg 2xl:text-xl gap-x-4 mt-4 lg:mt-0">
 							<a 
 								href="https://vinland-supply-react-dashboard.vercel.app/"
 								target="_blank"
@@ -603,7 +674,7 @@ if (languages?.includes("pt-BR") && !Boolean(visited)) {
 							</li>
 						</ul>
 
-						<div class="flex-1 flex items-end text-2xl gap-x-4 mt-4 lg:mt-0">
+						<div class="flex-1 flex items-end text-lg 2xl:text-xl gap-x-4 mt-4 lg:mt-0">
 							<a 
 								href="https://catmeow.vercel.app/"
 								target="_blank"
@@ -665,7 +736,7 @@ if (languages?.includes("pt-BR") && !Boolean(visited)) {
 							</li>
 						</ul>
 
-						<div class="flex-1 flex items-end text-2xl gap-x-4 mt-4 lg:mt-0">
+						<div class="flex-1 flex items-end text-lg 2xl:text-xl gap-x-4 mt-4 lg:mt-0">
 							<a 
 								href="https://luvekitchen.vercel.app/"
 								target="_blank"
@@ -720,7 +791,7 @@ if (languages?.includes("pt-BR") && !Boolean(visited)) {
 							</li>
 						</ul>
 
-						<div class="flex-1 flex items-end text-2xl gap-x-4 mt-4 lg:mt-0">
+						<div class="flex-1 flex items-end text-lg 2xl:text-xl gap-x-4 mt-4 lg:mt-0">
 							<a 
 								href="https://usableweb.netlify.app/"
 								target="_blank"
@@ -757,7 +828,7 @@ if (languages?.includes("pt-BR") && !Boolean(visited)) {
 			</h5>
 			<div class="flex flex-col lg:flex-row gap-4">
 
-				<div id="services-website" class="opacity-0 mt-[100px] w-full lg:w-1/2 p-0 lg:p-4 transition-shadow duration-300 lg:shadow-sm hover:lg:shadow-lg border border-neutral-700/25 dark:border-neutral-300/25">
+				<div id="services-website" class="opacity-0 mt-[100px] w-full lg:w-1/2 p-1 lg:p-4 transition-shadow duration-300 lg:shadow-sm hover:lg:shadow-lg border border-neutral-700/25 dark:border-neutral-300/25">
 						<i class="-ml-4 ph-thin ph-desktop text-[10rem] text-center bg-gradient-to-br from-neutral-950 via-neutral-800 to-neutral-700 dark:from-neutral-100 dark:via-neutral-200 dark:to-neutral-300 inline-block text-transparent bg-clip-text"></i>
 					<div class="my-2">
 						<p class="text-xl lg:text-xl mb-1 text-neutral-950 dark:text-neutral-100">
@@ -806,7 +877,7 @@ if (languages?.includes("pt-BR") && !Boolean(visited)) {
 					</ul>
 				</div>
 
-				<div id="services-app" class="opacity-0 mt-[100px] w-full lg:w-1/2 p-0 lg:p-4 transition-shadow duration-300 lg:shadow-sm hover:lg:shadow-lg border border-neutral-700/25 dark:border-neutral-300/25">
+				<div id="services-app" class="opacity-0 mt-[100px] w-full lg:w-1/2 p-1 lg:p-4 transition-shadow duration-300 lg:shadow-sm hover:lg:shadow-lg border border-neutral-700/25 dark:border-neutral-300/25">
 					<i class="-ml-8 ph-thin ph-device-mobile text-[10rem] text-center bg-gradient-to-br from-neutral-950 via-neutral-800 to-neutral-700 dark:from-neutral-100 dark:via-neutral-200 dark:to-neutral-300 inline-block text-transparent bg-clip-text"></i>
 					<div class="my-2">
 						<p class="text-xl lg:text-xl mb-1 text-neutral-950 dark:text-neutral-100">
@@ -980,15 +1051,18 @@ if (languages?.includes("pt-BR") && !Boolean(visited)) {
 				isAnimating = true;	
 				const heroTimeline = gsap.timeline();
 		
-				heroTimeline.to('#greeting', {
-					text: {
-						value: i18next.t('Hi, nice to meet you!'),
-						delimiter: ' '
+				heroTimeline
+				.fromTo(
+					'#greeting', 
+					{
+						opacity: 0
 					},
-					duration: 0.5,
-					ease: 'none',
-					opacity: 1
-				})
+					{
+						opacity: 1,
+						duration: 0.5,
+					},
+					0.4
+				)
 				.fromTo(
 					'#title', 
 					{
@@ -998,40 +1072,59 @@ if (languages?.includes("pt-BR") && !Boolean(visited)) {
 						borderLeftWidth: 4,
 						duration: 0.2,
 						opacity: 1
-					}
+					},
+					0.6
 				)
-				.to('#title-1', 
+				.fromTo('#title-1', 
 					{
-						text: i18next.t("I'm"),
-						duration: 0.1,
-						ease: 'none',
+						opacity: 0
+					},
+					{
 						opacity: 1,
-					}
-				)
-				.to('#title-2', 
-					{
-						text: "Gabriel<br>",
-						duration: 0.2,
-						ease: 'none',
-				})
-				.to('#title-3', 
-					{
-						text: "Souza Costa",
 						duration: 0.5,
-						ease: 'none',
-					}, 
+					},
 					1
 				)
-				// .to('#title-4', {
-				// 	text: 'Web & Mobile<br>Developer',
-				// 	duration: 0.7,
-				// 	ease: 'none',
-				// })
-				.to('#introduction', {
-					text: i18next.t('My goal is to create the best digital experiences \nthat are easy on the eyes and pleasant to use.'),
-					duration: 1.2,
-					ease: 'none',
-				}, 1)
+				.fromTo('#title-2', 
+					{
+						opacity: 0
+					},
+					{
+						opacity: 1,
+						duration: 0.5,
+					},
+					1.4
+				)
+				.fromTo('#title-3', 
+					{
+						opacity: 0
+					},
+					{
+						opacity: 1,
+						duration: 0.5,
+					},
+					1.75
+				)
+				.fromTo('#introduction', 
+					{
+						opacity: 0
+					},
+					{
+						opacity: 1,
+						duration: 0.5,
+					},
+					2
+				)
+				.fromTo('#introduction-2', 
+					{
+						opacity: 0
+					},
+					{
+						opacity: 1,
+						duration: 0.5,
+					},
+					2.5
+				)
 				.to('.planet-image', {
 					opacity: 1,
 				}, 1)
@@ -1047,7 +1140,7 @@ if (languages?.includes("pt-BR") && !Boolean(visited)) {
 						opacity: 1,
 						ease: 'power3',
 					},
-					1.6
+					2.7
 				)
 				.to('#hero-top-right-border', {
 					width: 160,
@@ -1073,7 +1166,7 @@ if (languages?.includes("pt-BR") && !Boolean(visited)) {
 						opacity: 1,
 						ease: 'none',
 					},
-					1.8
+					2.9
 				)
 				.to('#social-links', {
 					duration: 1,
@@ -1088,13 +1181,7 @@ if (languages?.includes("pt-BR") && !Boolean(visited)) {
 					},
 					{
 						scrollTrigger: '#about-me-paragraph',
-						text: `
-							${i18next.t("Hello there! I'm a developer")}
-							<strong class="uppercase text-primary-600 dark:text-primary-400"> Front End </strong>
-							${i18next.t("who is always looking for creating appealing, accessible, and user-friendly web applications. I've been immersed in technology since childhood, exploring Flash games and the web, modding games, learning and interacting with different devices and softwares.")}
-						`,
-						duration: 2,
-						ease: 'none',
+						
 						// opacity: 1
 					}, 
 				)
@@ -1106,13 +1193,6 @@ if (languages?.includes("pt-BR") && !Boolean(visited)) {
 					},
 					{
 						scrollTrigger: '#about-me-paragraph',
-						text: `
-							${i18next.t("I like watching anime, some series and films, going to the gym or practicing Muay Thai. I am very interested in learning about")}
-							<strong class="uppercase text-primary-600 dark:text-primary-400">
-									design
-							</strong> 
-							${i18next.t("apart from programming.")}
-						`,
 						duration: 1.5,
 						delay: 2,
 						ease: 'none',
