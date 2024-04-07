@@ -28,14 +28,13 @@ const { content } = Astro.props;
     <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#6d936a">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <script>
+    <script async>
       const language = navigator.language;
       const visited = sessionStorage.getItem("visited");
 
       if (language === "pt-BR" && !visited) {
-          sessionStorage.setItem("visited", "true");
-          console.log('setado');
-          window.location.href = "/pt-BR";
+        sessionStorage.setItem("visited", "true");
+        window.location.href = "/pt-BR";
       }
     </script>
 	</head>
